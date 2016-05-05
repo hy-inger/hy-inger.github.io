@@ -3,25 +3,24 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
 /* Basic */
-
-	body, input, select, textarea {
-		font-size: 11pt;
-	}
+/* line 12, ../sass/style-normal.scss */
+body, input, select, textarea {
+  font-size: 11pt;
+}
 
 /* Header */
-
-	.dropotron.level-0 {
-		font-size: 1em;
-	}
+/* line 19, ../sass/style-normal.scss */
+.dropotron.level-0 {
+  font-size: 1em;
+}
 
 /* Banner */
-
-	#banner {
-		background-attachment: scroll;
-	}
-
-		#banner h2 {
-			font-size: 3.5em;
-		}
+/* line 26, ../sass/style-normal.scss */
+#banner {
+  background-attachment: scroll;
+}
+/* line 29, ../sass/style-normal.scss */
+#banner h2 {
+  font-size: 3.5em;
+}

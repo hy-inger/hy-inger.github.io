@@ -44,9 +44,6 @@
 		font-style: italic;
 	}
 
-	p {
-		margin: 0 0 $size-element-margin 0;
-	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: $color-fg-bold;
@@ -1050,7 +1047,7 @@
 		
 		&.alt {
 			@include vendor-property('animation', 'none');
-			background: none;
+			background: #444444;
 			color: rgba(255,255,255,0.75);
 			position: absolute;
 
@@ -1211,7 +1208,8 @@
 
 	#main {
 		padding: 4em 0;
-		
+		position:relative;
+		top:-320px;
 		> header {
 			text-align: center;
 			margin: 0 0 3em 0;

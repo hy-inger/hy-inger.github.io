@@ -1,0 +1,53 @@
+---
+title: W3C下的冒泡和捕获机制
+layout: post
+---
+<p>在准备阿里前端面试的时候看到这么一道题。</p>
+<p>一个DOM元素绑定两个事件，一个冒泡，一个捕获，则事件会执行多少次，执行顺序如何。</p>
+
+<p>这导致了我对冒泡和捕获又进一步深入的了解。(永远都在发现自己知识匮乏的日子中度过人生真是好抓急啊。)</p>
+
+
+<p>首先冒泡和捕获是怎么一回事。</p>
+
+<p>简单点说。冒泡就是从下往上，像鱼吐泡，泡泡是从下往上升的，也就是DOM元素被触法事件时(此时的dom元素为目标元素)，目标元素事件执行后，它的祖先元素所绑定的事件会向上顺序执行。</p>
+
+<p>如下代码，有四个div嵌套元素，均绑定了click事件，addEventListener函数的第三个参数设置为false说明不为捕获事件，即为冒泡事件。该代码执行结果如下：</p>
+
+<p>点击one元素，输出one；</p>
+
+<p>点击two元素，输出two one;</p>
+
+<p>点击three元素，输出 three two one；</p>
+
+<p>点击four元素，输出 four three two one；</p>
+{% highlight html %}
+    <div id='one'>  
+        <span style="white-space:pre"></span>
+        <div id='two'>  
+            <div id='three'>  
+                <div id='four'>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+    <script type='text/javascript'>  
+        var one=document.getElementById('one');  
+        var two=document.getElementById('two');  
+        var three=document.getElementById('three');  
+        var four=document.getElementById('four');  
+        one.addEventListener('click',function(){  
+            alert('one');  
+        },false);  
+        two.addEventListener('click',function(){  
+            alert('two');  
+        },false);  
+        three.addEventListener('click',function(){  
+            alert('three');  
+        },false);  
+        four.addEventListener('click',function(){  
+            alert('four');  
+        },false);  
+    </script>  
+{% endhighlight %}
+
