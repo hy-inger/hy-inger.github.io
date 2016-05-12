@@ -41,8 +41,9 @@ $(function() {
     $('#main').append($('<nav id="h2outline"></nav>')
                          .css('position', 'absolute')
                          .css('width', '180px')
-						 .css('top', $('article').offset().top)
+                        .css('top', $('article').offset().top)
                          .css('text-align', 'left')
+                         .css('right','0px')
                          .html(outline_ul));
 
     /**
@@ -77,8 +78,7 @@ $(function() {
             c = 800,
             a = h2outline.width();
 			d = 10; // #real_nav has left margin of -184.8px
-        h2outline.css('right',
-                      (w - c) / 2 - (a + d));
+        
     });
 
     $(window).resize();

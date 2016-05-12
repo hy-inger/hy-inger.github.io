@@ -11,3 +11,6 @@ gems: [jekyll-paginate]
 highlighter: rouge
 
 excerpt_separator: "\n"
+
+owner:
+  name:           Ying Huang (Inger)

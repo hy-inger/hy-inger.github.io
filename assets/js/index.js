@@ -4,8 +4,8 @@ $(document).ready(function(){
     })
     $('.dl-menuwrapper').on('webkitAnimationEnd',function(){
         $(this).css({
-            top:'100px',
-            opacity:'1',
+            'padding-top':'100px',
+            'opacity':'1',
         });
     })
 })
