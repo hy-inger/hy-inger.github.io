@@ -4,8 +4,10 @@ baseurl: ''
 
 url: "http://localhost:4000"
 
-paginate: 10
+paginate: 5
 gems: [jekyll-paginate]
 
 
 highlighter: rouge
+
+excerpt_separator: "\n"

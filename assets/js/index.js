@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $('.hentry').on('webkitAnimationEnd',function(){
+        $(this).css('opacity','1');
+    })
+    $('.dl-menuwrapper').on('webkitAnimationEnd',function(){
+        $(this).css({
+            top:'100px',
+            opacity:'1',
+        });
+    })
+})
