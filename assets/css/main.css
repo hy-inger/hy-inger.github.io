@@ -1143,33 +1143,33 @@ svg:not(:root) {
 
 @-webkit-keyframes MenuAnimIn {
   0% {
-        transform: translateY(50px);
+        transform: translateY(20px);
         opacity: 0;
   }
   100% {
-    transform: translateY(100px);
+    transform: translateY(60px);
     opacity: 1;
   }
 }
 
 @-moz-keyframes MenuAnimIn {
   0% {
-        transform: translateY(50px);
+        transform: translateY(20px);
         opacity: 0;
   }
   100% {
-    transform: translateY(100px);
+    transform: translateY(60px);
     opacity: 1;
   }
 }
 
 @keyframes MenuAnimIn {
   0% {
-        transform: translateY(50px);
+        transform: translateY(20px);
         opacity: 0;
   }
   100% {
-    transform: translateY(100px);
+    transform: translateY(60px);
     opacity: 1;
   }
 }

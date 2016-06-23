@@ -1,0 +1,197 @@
+/* line 17, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/index.scss */
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 9, ../sass/index.scss */
+.cantainer {
+  height: 100%;
+}
+
+/* line 12, ../sass/index.scss */
+.nav {
+  position: fixed;
+  top: 40%;
+  left: 100px;
+  z-index: 99;
+}
+/* line 17, ../sass/index.scss */
+.nav ul li.step {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+/* line 26, ../sass/index.scss */
+section.item {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  line-height: 100vh;
+  position: absolute;
+  opacity: 0;
+}
+
+/* line 34, ../sass/index.scss */
+section.item1 {
+  background: #ddd;
+}
+
+/* line 37, ../sass/index.scss */
+section.item2 {
+  background: #F3DBDB;
+}
+
+/* line 40, ../sass/index.scss */
+section.active {
+  opacity: 1;
+}
+
+/* line 43, ../sass/index.scss */
+.prev-scale-down {
+  -webkit-animation: scaleDown 1s ease;
+  opacity: 0;
+}
+
+/* line 47, ../sass/index.scss */
+.next-slide-up {
+  -webkit-animation: slideUp 1s ease;
+  opacity: 1;
+}
+
+/* line 51, ../sass/index.scss */
+.next-scale-up {
+  -webkit-animation: scaleUp 1s ease;
+  opacity: 0;
+}
+
+/* line 55, ../sass/index.scss */
+.prev-slide-down {
+  -webkit-animation: slideDown 1s ease;
+  opacity: 1;
+}
+
+@-webkit-keyframes scaleDown {
+  /* line 60, ../sass/index.scss */
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  /* line 64, ../sass/index.scss */
+  100% {
+    -webkit-transform: scale(0.8) translateY(50%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes scaleUp {
+  /* line 70, ../sass/index.scss */
+  0% {
+    -webkit-transform: scale(0.5) translateY(50%);
+    opacity: 0;
+  }
+
+  /* line 74, ../sass/index.scss */
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  /* line 80, ../sass/index.scss */
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* line 84, ../sass/index.scss */
+  100% {
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  /* line 90, ../sass/index.scss */
+  0% {
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+  }
+
+  /* line 94, ../sass/index.scss */
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
