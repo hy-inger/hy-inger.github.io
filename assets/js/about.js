@@ -1,6 +1,6 @@
 window.onload = function(){
     // document.mozHidden !== undefined
-    var now = 1,next = 1;
+    var now = 1,next = 1,action = false;
     var section = document.querySelectorAll('.item'),
             num = section.length;
     var animation = function(next,prev,next_action,prev_action){
@@ -14,14 +14,12 @@ window.onload = function(){
             module.removeClass(prev_item,prev_action);
 
             module.removeClass(next_item,next_action);
-            module.addClass(next_item,'active');   
+            module.addClass(next_item,'active');  
+
+            action = false;
+            module.removeEvent(next_item,'webkitAnimationEnd',anim_end);  
         }
-        function test (e){
-            console.log(next);
-        }
-        module.removeEvent(next_item,'webkitAnimationEnd',anim_end);  
-        module.removeEvent(next_item,'click',test);
-        module.addEvent(next_item,'click',test);
+        
         module.addEvent(next_item,'webkitAnimationEnd',anim_end);
              
     }
@@ -33,10 +31,15 @@ window.onload = function(){
         module.addClass(next_item,'active');
     }*/
     module.addEvent(document,'mousewheel,DOMMouseScroll',function(e){
+        if(action){
+            return;
+        }
+        action = true;
         e.delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
         if(e.delta<0){
             next = now+1;
             if(next>num){
+                action = false;
                 return;
             }
             prev = now;
@@ -44,6 +47,7 @@ window.onload = function(){
             animation(next,prev,'next-slide-up','prev-scale-down');
         } else {
             if(now==1){
+                action = false;
                 return;
             }
             next = now-1;

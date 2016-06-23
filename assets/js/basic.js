@@ -1,24 +1,30 @@
 var module = (function(mod){
     /* addEventListener */
+    var eventCompat = function(event) {
+        var type = event.type;
+        if (type == 'DOMMouseScroll' || type == 'mousewheel') {
+            event.delta = (event.wheelDelta) ? event.wheelDelta / 120 : -(event.detail || 0) / 3;
+        }
+        if (event.srcElement && !event.target) {
+            event.target = event.srcElement;    
+        }
+        if (!event.preventDefault && event.returnValue !== undefined) {
+            event.preventDefault = function() {
+                event.returnValue = false;
+            };
+        }
+        return event;
+    };
+    var Listener = function(listener){
+        var handler = function(event){
+           listener.call(this,eventCompat(event)); 
+        }
+        return handler;
+    }
     mod.addEvent = function(ele,event,listener,bubble){
         var event_list = event.split(',');          //多个操作绑定同一事件回调
         if (typeof ele.addEventListener != "undefined") {
-            /*var eventCompat = function(event) {
-                var type = event.type;
-                if (type == 'DOMMouseScroll' || type == 'mousewheel') {
-                    event.delta = (event.wheelDelta) ? event.wheelDelta / 120 : -(event.detail || 0) / 3;
-                }
-                if (event.srcElement && !event.target) {
-                    event.target = event.srcElement;    
-                }
-                if (!event.preventDefault && event.returnValue !== undefined) {
-                    event.preventDefault = function() {
-                        event.returnValue = false;
-                    };
-                }
-                return event;
-            };
-            listener.call(this,eventCompat(event));
+            /*
             */
             for(var i=0;i<event_list.length;i++){
                 var e = event_list[i];
@@ -44,7 +50,6 @@ var module = (function(mod){
                 var e = event_list[i];  
                 ele.detachEvent('on'+e,listener);
             }
-            // ele.detachEvent(event,listener);
         } 
     };
     /* hasClass */
