@@ -1,0 +1,99 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/";
+
+body{
+    height: 100%;
+    overflow: hidden;
+}
+.cantainer{
+    height: 100%;
+}
+.nav{
+    position: fixed;
+    top:40%;
+    left:100px;
+    z-index:99;
+    ul li.step{
+        width: 10px;
+        height: 10px;
+        border:2px solid #ccc;
+        border-radius: 10px;
+        margin:8px;
+        cursor: pointer;
+    }
+}
+section.item{
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    line-height: 100vh;
+    position: absolute;
+    opacity: 0;
+}
+section.item1{
+    background: #ddd;
+}
+section.item2{
+    background: #F3DBDB;
+}
+section.active{
+    opacity: 1;
+}
+.prev-scale-down{
+    -webkit-animation: scaleDown 1s ease;
+    opacity: 0;
+}
+.next-slide-up{
+    -webkit-animation: slideUp 1s ease;
+    opacity: 1;
+}
+.next-scale-up{
+    -webkit-animation: scaleUp 1s ease;
+    opacity: 0;
+}
+.prev-slide-down{
+    -webkit-animation: slideDown 1s ease;
+    opacity: 1;
+}
+@-webkit-keyframes scaleDown{
+    0%{
+        -webkit-transform:scale(1) translateY(0);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform:scale(0.8) translateY(50%);
+        opacity: 0
+    }
+}
+@-webkit-keyframes scaleUp{
+    0%{
+        -webkit-transform:scale(0.5) translateY(50%);
+        opacity: 0;
+    }
+    100%{
+        -webkit-transform:scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideDown{
+    0%{
+        -webkit-transform:translateY(0);
+        opacity: 1;
+    }
+    100%{
+        -webkit-transform:translateY(100%);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes slideUp{
+    0%{
+        -webkit-transform:translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        -webkit-transform:translateY(0);
+        opacity: 1;
+    }
+}
+

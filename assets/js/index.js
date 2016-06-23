@@ -16,7 +16,7 @@ $(document).ready(function(){
     })
     $('.dl-menuwrapper').on('webkitAnimationEnd',function(){
         $(this).css({
-            'padding-top':'100px',
+            'padding-top':'60px',
             'opacity':'1',
         });
     })
