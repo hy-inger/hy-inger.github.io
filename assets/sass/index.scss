@@ -17,10 +17,14 @@ body{
     ul li.step{
         width: 10px;
         height: 10px;
-        border:2px solid #ccc;
+        border:2px solid #EF7883;
         border-radius: 10px;
         margin:8px;
         cursor: pointer;
+        opacity: 0.5; 
+    }
+    ul li.active{
+        opacity: 1; 
     }
 }
 section.item{
