@@ -2,6 +2,15 @@
 @import "compass/css3";
 @import "compass/utilities/";
 
+*{
+    box-sizing:border-box;
+}
+.clearfix{
+    @include clearfix;
+}
+html{
+    font-size: 62.5%;
+}
 body{
     height: 100%;
     overflow: hidden;
@@ -27,13 +36,13 @@ body{
         opacity: 1; 
     }
 }
+
 section.item{
     width: 100%;
-    text-align: center;
     height: 100vh;
-    line-height: 100vh;
     position: absolute;
-    opacity: 0;
+    display: none;
+    
 }
 section.item1{
     background: #ddd;
@@ -45,21 +54,22 @@ section.item3{
     background: #DBF3DB;
 }
 section.active{
-    opacity: 1;
+    display: block;
 }
-.prev-scale-down{
+section.prev-scale-down{
     -webkit-animation: scaleDown 1s ease;
     opacity: 0;
+
 }
-.next-slide-up{
+section.next-slide-up{
     -webkit-animation: slideUp 1s ease;
     opacity: 1;
 }
-.next-scale-up{
+section.next-scale-up{
     -webkit-animation: scaleUp 1s ease;
     opacity: 0;
 }
-.prev-slide-down{
+section.prev-slide-down{
     -webkit-animation: slideDown 1s ease;
     opacity: 1;
 }
@@ -104,3 +114,109 @@ section.active{
     }
 }
 
+.timeline {
+    padding:5rem 5rem;
+    position: relative;
+    &::before{
+        content:' ';
+        width: 4px;
+        height: 100%;
+        display: block;
+        background: #7EA0CC;
+        position: absolute;
+        left:6rem;
+
+    }
+    
+    .timeline-block{
+        position: relative;
+        width:100%;
+        margin-bottom: 5rem;
+        @media only screen and (min-width: 1170px){
+            &:nth-child(even){
+                margin-bottom: 1rem;
+                overflow: hidden;
+                *zoom: 1;
+                .timeline-main{
+                    float: right;
+                }
+                .timeline-main:before{
+                    left:-1.2rem;
+                    z-index: 2;
+                    width:0.1rem;
+                    height: 0.1rem;
+                    border-color:transparent #fff transparent transparent;
+                }
+            }
+        }
+        
+    }
+    
+    .timeline-point{
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border:0.4rem solid #B8C6D8;
+        border-radius: 2rem;
+        background: #7EA0CC;
+        left:0.2rem;
+        top:0.6rem;
+    }
+    .timeline-main{
+        width: 100%;
+        background: #fff;
+        padding:2rem;
+        position: relative;
+        border-radius: 0.5rem;
+        margin-left: 4rem;
+        &:before{
+            content:' ';
+            width:0.1rem;
+            height: 0.1rem;
+            border-width:0.6rem;
+            border-style: solid;
+            border-color:transparent #fff transparent transparent;
+            display: block;
+            position: absolute;
+            top:0.8rem;
+            left:-1.2rem;
+            
+        }
+    }
+    .h3{
+        font-size: 2rem;
+        font-weight: bold;
+        color:#333;
+        margin-bottom: 1rem;
+    }
+    .h5{
+        font-size: 1.4rem;
+        color:#ccc;
+    }
+    .timeline-content{
+        font-size: 1.6rem;
+        line-height: 2rem;
+        color:#696868;
+    }
+    @media only screen and (min-width: 1170px){
+      &::before{
+            top:0;
+            left:50%;
+
+        }
+        .timeline-point{
+            left:50%;
+            margin-left: -1rem;
+            
+        }
+        .timeline-main{
+            width: 46%;
+            margin-left:0;
+            &:before{
+                border-color:transparent transparent transparent #fff;
+                left:100%;
+                
+            }
+        } 
+    }
+}

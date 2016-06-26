@@ -12,6 +12,7 @@ window.onload = function(){
                 module.addClass(next_item,next_action);
                 module.addClass(prev_item,prev_action);
         var anim_end = function(e){
+
             module.removeClass(prev_item,'active');
             module.removeClass(prev_item,prev_action);
 
@@ -22,9 +23,14 @@ window.onload = function(){
             module.removeClass(prev_nav,'active');
 
             action = false;
+            prev_item.style.display='none';
             module.removeEvent(next_item,'webkitAnimationEnd',anim_end);  
         }
-        
+        var anim_start = function(e){
+            next_item.style.display = 'block';
+            module.removeEvent(prev_item,'webkitAnimationStart',anim_start);
+        }
+        module.addEvent(prev_item,'webkitAnimationStart',anim_start);
         module.addEvent(next_item,'webkitAnimationEnd',anim_end);
              
     }
@@ -59,9 +65,11 @@ window.onload = function(){
     var ul = document.getElementById('nav');
     module.addEvent(ul,'click',function(e){
         if(action){
-            setTimeout(function(){
+            var timer = setTimeout(function(){
                 action = false;
-            },300000);
+                console.log(action);
+                clearTimeout(timer);
+            },30000);
             return;
         }
         action = true;

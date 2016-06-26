@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,68 +20,84 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /* line 5, ../sass/index.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 8, ../sass/index.scss */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 11, ../sass/index.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 14, ../sass/index.scss */
 body {
   height: 100%;
   overflow: hidden;
 }
 
-/* line 9, ../sass/index.scss */
+/* line 18, ../sass/index.scss */
 .cantainer {
   height: 100%;
 }
 
-/* line 12, ../sass/index.scss */
+/* line 21, ../sass/index.scss */
 .nav {
   position: fixed;
   top: 40%;
   left: 100px;
   z-index: 99;
 }
-/* line 17, ../sass/index.scss */
+/* line 26, ../sass/index.scss */
 .nav ul li.step {
   width: 10px;
   height: 10px;
@@ -91,117 +107,214 @@ body {
   cursor: pointer;
   opacity: 0.5;
 }
-/* line 26, ../sass/index.scss */
+/* line 35, ../sass/index.scss */
 .nav ul li.active {
   opacity: 1;
 }
 
-/* line 30, ../sass/index.scss */
+/* line 40, ../sass/index.scss */
 section.item {
   width: 100%;
-  text-align: center;
   height: 100vh;
-  line-height: 100vh;
   position: absolute;
-  opacity: 0;
+  display: none;
 }
 
-/* line 38, ../sass/index.scss */
+/* line 47, ../sass/index.scss */
 section.item1 {
   background: #ddd;
 }
 
-/* line 41, ../sass/index.scss */
+/* line 50, ../sass/index.scss */
 section.item2 {
   background: #F3DBDB;
 }
 
-/* line 44, ../sass/index.scss */
+/* line 53, ../sass/index.scss */
 section.item3 {
   background: #DBF3DB;
 }
 
-/* line 47, ../sass/index.scss */
+/* line 56, ../sass/index.scss */
 section.active {
-  opacity: 1;
+  display: block;
 }
 
-/* line 50, ../sass/index.scss */
-.prev-scale-down {
+/* line 59, ../sass/index.scss */
+section.prev-scale-down {
   -webkit-animation: scaleDown 1s ease;
   opacity: 0;
 }
 
-/* line 54, ../sass/index.scss */
-.next-slide-up {
+/* line 64, ../sass/index.scss */
+section.next-slide-up {
   -webkit-animation: slideUp 1s ease;
   opacity: 1;
 }
 
-/* line 58, ../sass/index.scss */
-.next-scale-up {
+/* line 68, ../sass/index.scss */
+section.next-scale-up {
   -webkit-animation: scaleUp 1s ease;
   opacity: 0;
 }
 
-/* line 62, ../sass/index.scss */
-.prev-slide-down {
+/* line 72, ../sass/index.scss */
+section.prev-slide-down {
   -webkit-animation: slideDown 1s ease;
   opacity: 1;
 }
 
 @-webkit-keyframes scaleDown {
-  /* line 67, ../sass/index.scss */
   0% {
     -webkit-transform: scale(1) translateY(0);
     opacity: 1;
   }
-
-  /* line 71, ../sass/index.scss */
   100% {
     -webkit-transform: scale(0.8) translateY(50%);
     opacity: 0;
   }
 }
-
 @-webkit-keyframes scaleUp {
-  /* line 77, ../sass/index.scss */
   0% {
     -webkit-transform: scale(0.5) translateY(50%);
     opacity: 0;
   }
-
-  /* line 81, ../sass/index.scss */
   100% {
     -webkit-transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
-
 @-webkit-keyframes slideDown {
-  /* line 87, ../sass/index.scss */
   0% {
     -webkit-transform: translateY(0);
     opacity: 1;
   }
-
-  /* line 91, ../sass/index.scss */
   100% {
     -webkit-transform: translateY(100%);
     opacity: 0;
   }
 }
-
 @-webkit-keyframes slideUp {
-  /* line 97, ../sass/index.scss */
   0% {
     -webkit-transform: translateY(100%);
     opacity: 0;
   }
-
-  /* line 101, ../sass/index.scss */
   100% {
     -webkit-transform: translateY(0);
     opacity: 1;
+  }
+}
+/* line 117, ../sass/index.scss */
+.timeline {
+  padding: 5rem 5rem;
+  position: relative;
+}
+/* line 120, ../sass/index.scss */
+.timeline::before {
+  content: ' ';
+  width: 4px;
+  height: 100%;
+  display: block;
+  background: #7EA0CC;
+  position: absolute;
+  left: 6rem;
+}
+/* line 131, ../sass/index.scss */
+.timeline .timeline-block {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+@media only screen and (min-width: 1170px) {
+  /* line 136, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    *zoom: 1;
+  }
+  /* line 140, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) .timeline-main {
+    float: right;
+  }
+  /* line 143, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) .timeline-main:before {
+    left: -1.2rem;
+    z-index: 2;
+    width: 0.1rem;
+    height: 0.1rem;
+    border-color: transparent #fff transparent transparent;
+  }
+}
+/* line 155, ../sass/index.scss */
+.timeline .timeline-point {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border: 0.4rem solid #B8C6D8;
+  border-radius: 2rem;
+  background: #7EA0CC;
+  left: 0.2rem;
+  top: 0.6rem;
+}
+/* line 165, ../sass/index.scss */
+.timeline .timeline-main {
+  width: 100%;
+  background: #fff;
+  padding: 2rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-left: 4rem;
+}
+/* line 172, ../sass/index.scss */
+.timeline .timeline-main:before {
+  content: ' ';
+  width: 0.1rem;
+  height: 0.1rem;
+  border-width: 0.6rem;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  display: block;
+  position: absolute;
+  top: 0.8rem;
+  left: -1.2rem;
+}
+/* line 186, ../sass/index.scss */
+.timeline .h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+/* line 192, ../sass/index.scss */
+.timeline .h5 {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+/* line 196, ../sass/index.scss */
+.timeline .timeline-content {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #696868;
+}
+@media only screen and (min-width: 1170px) {
+  /* line 202, ../sass/index.scss */
+  .timeline::before {
+    top: 0;
+    left: 50%;
+  }
+  /* line 207, ../sass/index.scss */
+  .timeline .timeline-point {
+    left: 50%;
+    margin-left: -1rem;
+  }
+  /* line 212, ../sass/index.scss */
+  .timeline .timeline-main {
+    width: 46%;
+    margin-left: 0;
+  }
+  /* line 215, ../sass/index.scss */
+  .timeline .timeline-main:before {
+    border-color: transparent transparent transparent #fff;
+    left: 100%;
   }
 }
