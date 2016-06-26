@@ -226,9 +226,12 @@ section.prev-slide-down {
   margin-bottom: 5rem;
 }
 @media only screen and (min-width: 1170px) {
-  /* line 136, ../sass/index.scss */
+  /* line 131, ../sass/index.scss */
+  .timeline .timeline-block {
+    margin-bottom: 3rem;
+  }
+  /* line 137, ../sass/index.scss */
   .timeline .timeline-block:nth-child(even) {
-    margin-bottom: 1rem;
     overflow: hidden;
     *zoom: 1;
   }

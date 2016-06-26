@@ -133,8 +133,8 @@ section.prev-slide-down{
         width:100%;
         margin-bottom: 5rem;
         @media only screen and (min-width: 1170px){
+            margin-bottom: 3rem;
             &:nth-child(even){
-                margin-bottom: 1rem;
                 overflow: hidden;
                 *zoom: 1;
                 .timeline-main{
