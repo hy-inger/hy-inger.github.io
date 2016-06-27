@@ -116,7 +116,6 @@ section.prev-slide-down{
 
 .timeline {
     padding:5rem 5rem;
-    position: relative;
     &::before{
         content:' ';
         width: 4px;
@@ -125,31 +124,16 @@ section.prev-slide-down{
         background: #7EA0CC;
         position: absolute;
         left:6rem;
-
+        top:0;
     }
     
     .timeline-block{
         position: relative;
         width:100%;
         margin-bottom: 5rem;
-        @media only screen and (min-width: 1170px){
-            margin-bottom: 3rem;
-            &:nth-child(even){
-                overflow: hidden;
-                *zoom: 1;
-                .timeline-main{
-                    float: right;
-                }
-                .timeline-main:before{
-                    left:-1.2rem;
-                    z-index: 2;
-                    width:0.1rem;
-                    height: 0.1rem;
-                    border-color:transparent #fff transparent transparent;
-                }
-            }
+        &:first-child{
+            margin-top: 30px;
         }
-        
     }
     
     .timeline-point{
@@ -163,7 +147,6 @@ section.prev-slide-down{
         top:0.6rem;
     }
     .timeline-main{
-        width: 100%;
         background: #fff;
         padding:2rem;
         position: relative;
@@ -197,16 +180,32 @@ section.prev-slide-down{
         font-size: 1.6rem;
         line-height: 2rem;
         color:#696868;
+        margin-top: 10px;
     }
     @media only screen and (min-width: 1170px){
       &::before{
-            top:0;
             left:50%;
-
+        }
+        .timeline-block{
+            margin-bottom: 3rem;
+            &:nth-child(even){
+                overflow: hidden;
+                *zoom: 1;
+                .timeline-main{
+                    float: right;
+                }
+                .timeline-main:before{
+                    left:-1.2rem;
+                    z-index: 2;
+                    width:0.1rem;
+                    height: 0.1rem;
+                    border-color:transparent #fff transparent transparent;
+                }
+            }
         }
         .timeline-point{
             left:50%;
-            margin-left: -1rem;
+            margin-left: -0.9rem;
             
         }
         .timeline-main{
