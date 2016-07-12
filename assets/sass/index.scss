@@ -219,3 +219,43 @@ section.prev-slide-down{
         } 
     }
 }
+.tech{
+    .tech-tag{
+        width: 50%;
+        margin:100px auto;
+    }
+    .tag{
+        display: inline-block;
+        
+   }
+}
+@for $i from 1 to 10 {
+    $size:random()*12;
+    $opacity:random();
+    $delay:random()*5+5; 
+    $width:1rem; 
+    .tech .tag#{$i}{ 
+        opacity: $opacity;
+        padding:$opacity*1rem $opacity*3rem;
+        font-size:$size*$width;
+        color:rgb($opacity*30,$opacity*120,$opacity*200);
+        animation:#{$delay}s fade 0.3s ease infinite;  
+    }
+    @keyframes fade {
+        0% {
+            opacity: $opacity;
+        }
+        30% {
+            opacity: $opacity+0.3;
+        }
+        50% {
+            opacity: $opacity+0.6;
+        }
+        70%{
+            opacity: $opacity+0.3;
+        }
+        100% {
+            opacity: $opacity;
+        }
+    }  
+}

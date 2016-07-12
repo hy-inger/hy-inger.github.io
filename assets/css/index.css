@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,46 +20,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -165,61 +165,45 @@ section.prev-slide-down {
 }
 
 @-webkit-keyframes scaleDown {
-  /* line 77, ../sass/index.scss */
   0% {
     -webkit-transform: scale(1) translateY(0);
     opacity: 1;
   }
-
-  /* line 81, ../sass/index.scss */
   100% {
     -webkit-transform: scale(0.8) translateY(50%);
     opacity: 0;
   }
 }
-
 @-webkit-keyframes scaleUp {
-  /* line 87, ../sass/index.scss */
   0% {
     -webkit-transform: scale(0.5) translateY(50%);
     opacity: 0;
   }
-
-  /* line 91, ../sass/index.scss */
   100% {
     -webkit-transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
-
 @-webkit-keyframes slideDown {
-  /* line 97, ../sass/index.scss */
   0% {
     -webkit-transform: translateY(0);
     opacity: 1;
   }
-
-  /* line 101, ../sass/index.scss */
   100% {
     -webkit-transform: translateY(100%);
     opacity: 0;
   }
 }
-
 @-webkit-keyframes slideUp {
-  /* line 107, ../sass/index.scss */
   0% {
     -webkit-transform: translateY(100%);
     opacity: 0;
   }
-
-  /* line 111, ../sass/index.scss */
   100% {
     -webkit-transform: translateY(0);
     opacity: 1;
   }
 }
-
 /* line 117, ../sass/index.scss */
 .timeline {
   padding: 5rem 5rem;
@@ -336,5 +320,250 @@ section.prev-slide-down {
   .timeline .timeline-main:before {
     border-color: transparent transparent transparent #fff;
     left: 100%;
+  }
+}
+
+/* line 223, ../sass/index.scss */
+.tech .tech-tag {
+  width: 50%;
+  margin: 100px auto;
+}
+/* line 227, ../sass/index.scss */
+.tech .tag {
+  display: inline-block;
+}
+
+/* line 237, ../sass/index.scss */
+.tech .tag1 {
+  opacity: 0.05478;
+  padding: 0.05478rem 0.16434rem;
+  font-size: 0.6068rem;
+  color: #02070b;
+  animation: 7.01705s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.05478;
+  }
+  30% {
+    opacity: 0.35478;
+  }
+  50% {
+    opacity: 0.65478;
+  }
+  70% {
+    opacity: 0.35478;
+  }
+  100% {
+    opacity: 0.05478;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag2 {
+  opacity: 0.70451;
+  padding: 0.70451rem 2.11353rem;
+  font-size: 4.21306rem;
+  color: #15558d;
+  animation: 7.70043s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.70451;
+  }
+  30% {
+    opacity: 1.00451;
+  }
+  50% {
+    opacity: 1.30451;
+  }
+  70% {
+    opacity: 1.00451;
+  }
+  100% {
+    opacity: 0.70451;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag3 {
+  opacity: 0.28739;
+  padding: 0.28739rem 0.86218rem;
+  font-size: 7.15835rem;
+  color: #092239;
+  animation: 7.11524s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.28739;
+  }
+  30% {
+    opacity: 0.58739;
+  }
+  50% {
+    opacity: 0.88739;
+  }
+  70% {
+    opacity: 0.58739;
+  }
+  100% {
+    opacity: 0.28739;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag4 {
+  opacity: 0.98544;
+  padding: 0.98544rem 2.95632rem;
+  font-size: 8.00242rem;
+  color: #1e76c5;
+  animation: 5.2983s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.98544;
+  }
+  30% {
+    opacity: 1.28544;
+  }
+  50% {
+    opacity: 1.58544;
+  }
+  70% {
+    opacity: 1.28544;
+  }
+  100% {
+    opacity: 0.98544;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag5 {
+  opacity: 0.49749;
+  padding: 0.49749rem 1.49248rem;
+  font-size: 3.66985rem;
+  color: #0f3c63;
+  animation: 8.97101s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.49749;
+  }
+  30% {
+    opacity: 0.79749;
+  }
+  50% {
+    opacity: 1.09749;
+  }
+  70% {
+    opacity: 0.79749;
+  }
+  100% {
+    opacity: 0.49749;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag6 {
+  opacity: 0.957;
+  padding: 0.957rem 2.87101rem;
+  font-size: 5.95747rem;
+  color: #1d73bf;
+  animation: 7.82887s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.957;
+  }
+  30% {
+    opacity: 1.257;
+  }
+  50% {
+    opacity: 1.557;
+  }
+  70% {
+    opacity: 1.257;
+  }
+  100% {
+    opacity: 0.957;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag7 {
+  opacity: 0.35093;
+  padding: 0.35093rem 1.0528rem;
+  font-size: 0.45486rem;
+  color: #0b2a46;
+  animation: 6.76109s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.35093;
+  }
+  30% {
+    opacity: 0.65093;
+  }
+  50% {
+    opacity: 0.95093;
+  }
+  70% {
+    opacity: 0.65093;
+  }
+  100% {
+    opacity: 0.35093;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag8 {
+  opacity: 0.65523;
+  padding: 0.65523rem 1.96569rem;
+  font-size: 10.26813rem;
+  color: #144f83;
+  animation: 6.46267s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.65523;
+  }
+  30% {
+    opacity: 0.95523;
+  }
+  50% {
+    opacity: 1.25523;
+  }
+  70% {
+    opacity: 0.95523;
+  }
+  100% {
+    opacity: 0.65523;
+  }
+}
+/* line 237, ../sass/index.scss */
+.tech .tag9 {
+  opacity: 0.58355;
+  padding: 0.58355rem 1.75065rem;
+  font-size: 7.55712rem;
+  color: #124675;
+  animation: 6.28523s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.58355;
+  }
+  30% {
+    opacity: 0.88355;
+  }
+  50% {
+    opacity: 1.18355;
+  }
+  70% {
+    opacity: 0.88355;
+  }
+  100% {
+    opacity: 0.58355;
   }
 }
