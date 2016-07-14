@@ -50,8 +50,11 @@ section.item1{
 section.item2{
     background: #F3DBDB;
 }
-section.item3{
+section.item3{ 
     background: #DBF3DB;
+}
+section.item4{
+    background: #DBE8F3; 
 }
 section.active{
     display: block;
@@ -258,4 +261,42 @@ section.prev-slide-down{
             opacity: $opacity;
         }
     }  
+}
+.reel{
+    width: 80%;
+    margin:0 auto;
+    padding-top: 5rem;
+    .shaft{
+        width: 20rem;
+        height: 2.5rem;
+        /* border:0.2rem solid #333; */
+        background: -webkit-radial-gradient(#fff 20%,#ccc);
+        position:relative;
+        &:before,&:after{
+            content:' ';
+            position:absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #333;
+            top:50%; 
+            margin-top: -0.75rem;
+        }
+        &:before{
+            left:-1.5rem;
+        }
+        &:after{
+            right:-1.5rem;
+        }
+        
+    }
+    .bottom-shaft{
+        
+    }
+    .content{
+        width: 20rem;
+        height: 30rem;
+        display: none;
+        overflow: hidden;
+        background: -webkit-linear-gradient(top,#ccc,#fff 5%,#ccc 95%);
+    }
 }

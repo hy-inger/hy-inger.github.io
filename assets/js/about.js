@@ -90,4 +90,8 @@ window.onload = function(){
             now = next;
         }
     },true);
+
+    /* 滚轴效果 */
+    var content = document.getElementById('content');
+    module.slideDown(content,'1200');
 }
