@@ -92,6 +92,17 @@ window.onload = function(){
     },true);
 
     /* 滚轴效果 */
-    var content = document.getElementById('content');
-    module.slideDown(content,'1200');
+    var content = document.querySelectorAll('.content');
+    for(var i=0;i<content.length;i++){
+        slideDown(i);
+        function slideDown(i){
+            var timer = setTimeout(function(){
+                module.slideDown(content[i],1000);
+                clearTimeout(timer);
+            },i*800);
+        }
+        
+        
+    }
+    //module.slideDown(content,'1200');
 }
