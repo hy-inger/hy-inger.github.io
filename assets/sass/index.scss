@@ -44,7 +44,7 @@ section.item{
     height: 100vh;
     position: absolute;
     display: none;
-    padding:0 100px;
+    padding:0 .5rem;
     
 }
 section.item1{
@@ -270,7 +270,7 @@ section.prev-slide-down{
 }
 .reel{
     float:left;
-    text-align: center;
+    
     margin:0 auto;
     padding: .5rem calc(((100% / 3) - 2rem) / 2);
     width: calc(100% / 3);
@@ -336,6 +336,18 @@ section.prev-slide-down{
         display: none;
         overflow: hidden;
         background: -webkit-linear-gradient(top,#fff 5%,#ccc 95%);
+        padding: .1rem;
+        line-height: 20px;
+        .title{
+            font-size: 0.2rem;
+            color:#333;
+            text-align: center;
+            padding-bottom: .1rem;
+        }
+        .detail{
+            font-size: .12rem;
+            color:#5F5F5F;
+        }
     }
 }
 section.info{
@@ -381,7 +393,7 @@ section.info{
         font-size: .25rem;
         width: 4.3rem;
         animation-timing-function:steps(18,end);
-        animation-duration:3.5;
+        animation-duration:3.5s;
     }
     
 }

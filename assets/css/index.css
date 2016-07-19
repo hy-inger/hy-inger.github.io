@@ -119,7 +119,7 @@ section.item {
   height: 100vh;
   position: absolute;
   display: none;
-  padding: 0 100px;
+  padding: 0 .5rem;
 }
 
 /* line 50, ../sass/index.scss */
@@ -347,242 +347,241 @@ section.prev-slide-down {
 
 /* line 246, ../sass/index.scss */
 .tech .tag1 {
-  opacity: 0.78011;
-  padding: 0.07801rem 0.23403rem;
-  font-size: 0.40357rem;
-  color: #175e9c;
-  animation: 6.77549s fade 0.3s ease infinite;
+  opacity: 0.09183;
+  padding: 0.00918rem 0.02755rem;
+  font-size: 1.15792rem;
+  color: #030b12;
+  animation: 5.34986s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.78011;
+    opacity: 0.09183;
   }
   30% {
-    opacity: 1.08011;
+    opacity: 0.39183;
   }
   50% {
-    opacity: 1.38011;
+    opacity: 0.69183;
   }
   70% {
-    opacity: 1.08011;
+    opacity: 0.39183;
   }
   100% {
-    opacity: 0.78011;
+    opacity: 0.09183;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag2 {
-  opacity: 0.56162;
-  padding: 0.05616rem 0.16849rem;
-  font-size: 0.77298rem;
-  color: #114370;
-  animation: 5.52301s fade 0.3s ease infinite;
+  opacity: 0.77155;
+  padding: 0.07715rem 0.23146rem;
+  font-size: 0.81913rem;
+  color: #175d9a;
+  animation: 5.83154s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.56162;
+    opacity: 0.77155;
   }
   30% {
-    opacity: 0.86162;
+    opacity: 1.07155;
   }
   50% {
-    opacity: 1.16162;
+    opacity: 1.37155;
   }
   70% {
-    opacity: 0.86162;
+    opacity: 1.07155;
   }
   100% {
-    opacity: 0.56162;
+    opacity: 0.77155;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag3 {
-  opacity: 0.48372;
-  padding: 0.04837rem 0.14511rem;
-  font-size: 0.43198rem;
-  color: #0f3a61;
-  animation: 9.71704s fade 0.3s ease infinite;
+  opacity: 0.30709;
+  padding: 0.03071rem 0.09213rem;
+  font-size: 0.90133rem;
+  color: #09253d;
+  animation: 6.40214s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.48372;
+    opacity: 0.30709;
   }
   30% {
-    opacity: 0.78372;
+    opacity: 0.60709;
   }
   50% {
-    opacity: 1.08372;
+    opacity: 0.90709;
   }
   70% {
-    opacity: 0.78372;
+    opacity: 0.60709;
   }
   100% {
-    opacity: 0.48372;
+    opacity: 0.30709;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag4 {
-  opacity: 0.78975;
-  padding: 0.07898rem 0.23693rem;
-  font-size: 0.46793rem;
-  color: #185f9e;
-  animation: 9.21356s fade 0.3s ease infinite;
+  opacity: 0.58853;
+  padding: 0.05885rem 0.17656rem;
+  font-size: 1.06754rem;
+  color: #124776;
+  animation: 8.3395s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.78975;
+    opacity: 0.58853;
   }
   30% {
-    opacity: 1.08975;
+    opacity: 0.88853;
   }
   50% {
-    opacity: 1.38975;
+    opacity: 1.18853;
   }
   70% {
-    opacity: 1.08975;
+    opacity: 0.88853;
   }
   100% {
-    opacity: 0.78975;
+    opacity: 0.58853;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag5 {
-  opacity: 0.09562;
-  padding: 0.00956rem 0.02869rem;
-  font-size: 0.18552rem;
-  color: #030b13;
-  animation: 6.49178s fade 0.3s ease infinite;
+  opacity: 0.36814;
+  padding: 0.03681rem 0.11044rem;
+  font-size: 0.70414rem;
+  color: #0b2c4a;
+  animation: 9.83226s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.09562;
+    opacity: 0.36814;
   }
   30% {
-    opacity: 0.39562;
+    opacity: 0.66814;
   }
   50% {
-    opacity: 0.69562;
+    opacity: 0.96814;
   }
   70% {
-    opacity: 0.39562;
+    opacity: 0.66814;
   }
   100% {
-    opacity: 0.09562;
+    opacity: 0.36814;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag6 {
-  opacity: 0.81661;
-  padding: 0.08166rem 0.24498rem;
-  font-size: 0.26669rem;
-  color: #1862a3;
-  animation: 5.4935s fade 0.3s ease infinite;
+  opacity: 0.50727;
+  padding: 0.05073rem 0.15218rem;
+  font-size: 0.76418rem;
+  color: #0f3d65;
+  animation: 8.37115s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.81661;
+    opacity: 0.50727;
   }
   30% {
-    opacity: 1.11661;
+    opacity: 0.80727;
   }
   50% {
-    opacity: 1.41661;
+    opacity: 1.10727;
   }
   70% {
-    opacity: 1.11661;
+    opacity: 0.80727;
   }
   100% {
-    opacity: 0.81661;
+    opacity: 0.50727;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag7 {
-  opacity: 0.56227;
-  padding: 0.05623rem 0.16868rem;
-  font-size: 0.83504rem;
-  color: #114370;
-  animation: 6.13469s fade 0.3s ease infinite;
+  opacity: 0.81279;
+  padding: 0.08128rem 0.24384rem;
+  font-size: 0.01767rem;
+  color: #1862a3;
+  animation: 9.61774s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.56227;
+    opacity: 0.81279;
   }
   30% {
-    opacity: 0.86227;
+    opacity: 1.11279;
   }
   50% {
-    opacity: 1.16227;
+    opacity: 1.41279;
   }
   70% {
-    opacity: 0.86227;
+    opacity: 1.11279;
   }
   100% {
-    opacity: 0.56227;
+    opacity: 0.81279;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag8 {
-  opacity: 0.91574;
-  padding: 0.09157rem 0.27472rem;
-  font-size: 0.08272rem;
-  color: #1b6eb7;
-  animation: 9.67563s fade 0.3s ease infinite;
+  opacity: 0.49259;
+  padding: 0.04926rem 0.14778rem;
+  font-size: 0.77613rem;
+  color: #0f3b63;
+  animation: 7.99303s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.91574;
+    opacity: 0.49259;
   }
   30% {
-    opacity: 1.21574;
+    opacity: 0.79259;
   }
   50% {
-    opacity: 1.51574;
+    opacity: 1.09259;
   }
   70% {
-    opacity: 1.21574;
+    opacity: 0.79259;
   }
   100% {
-    opacity: 0.91574;
+    opacity: 0.49259;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag9 {
-  opacity: 0.36509;
-  padding: 0.03651rem 0.10953rem;
-  font-size: 0.291rem;
-  color: #0b2c49;
-  animation: 7.13895s fade 0.3s ease infinite;
+  opacity: 0.18116;
+  padding: 0.01812rem 0.05435rem;
+  font-size: 0.6919rem;
+  color: #051624;
+  animation: 6.26625s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.36509;
+    opacity: 0.18116;
   }
   30% {
-    opacity: 0.66509;
+    opacity: 0.48116;
   }
   50% {
-    opacity: 0.96509;
+    opacity: 0.78116;
   }
   70% {
-    opacity: 0.66509;
+    opacity: 0.48116;
   }
   100% {
-    opacity: 0.36509;
+    opacity: 0.18116;
   }
 }
 /* line 271, ../sass/index.scss */
 .reel {
   float: left;
-  text-align: center;
   margin: 0 auto;
   padding: 0.5rem calc(((100% / 3) - 2rem) / 2);
   width: calc(100% / 3);
@@ -653,14 +652,28 @@ section.prev-slide-down {
   display: none;
   overflow: hidden;
   background: -webkit-linear-gradient(top, #fff 5%, #ccc 95%);
+  padding: .1rem;
+  line-height: 20px;
+}
+/* line 341, ../sass/index.scss */
+.reel .content .title {
+  font-size: 0.2rem;
+  color: #333;
+  text-align: center;
+  padding-bottom: .1rem;
+}
+/* line 347, ../sass/index.scss */
+.reel .content .detail {
+  font-size: .12rem;
+  color: #5F5F5F;
 }
 
-/* line 341, ../sass/index.scss */
+/* line 353, ../sass/index.scss */
 section.info {
   padding-top: .5rem;
   text-align: center;
 }
-/* line 344, ../sass/index.scss */
+/* line 356, ../sass/index.scss */
 section.info .head {
   width: 1.5rem;
   height: 1.5rem;
@@ -669,7 +682,7 @@ section.info .head {
   margin: 0 auto;
   margin-bottom: .1rem;
 }
-/* line 352, ../sass/index.scss */
+/* line 364, ../sass/index.scss */
 section.info .type {
   margin: 0 auto;
   white-space: nowrap;
@@ -677,7 +690,7 @@ section.info .type {
   animation-name: type;
   padding: .1rem 0;
 }
-/* line 360, ../sass/index.scss */
+/* line 372, ../sass/index.scss */
 section.info .name {
   color: #333;
   width: 1rem;
@@ -687,7 +700,7 @@ section.info .name {
   animation-timing-function: steps(2, end);
   animation-duration: 0.8s;
 }
-/* line 369, ../sass/index.scss */
+/* line 381, ../sass/index.scss */
 section.info .position, section.info .email, section.info .phone {
   color: #757171;
   font-size: .3rem;
@@ -695,17 +708,17 @@ section.info .position, section.info .email, section.info .phone {
   animation-timing-function: steps(11, end);
   animation-duration: 2.5s;
 }
-/* line 376, ../sass/index.scss */
+/* line 388, ../sass/index.scss */
 section.info .phone {
   width: 1.7rem;
 }
-/* line 379, ../sass/index.scss */
+/* line 391, ../sass/index.scss */
 section.info .education {
   color: #969595;
   font-size: .25rem;
   width: 4.3rem;
   animation-timing-function: steps(18, end);
-  animation-duration: 3.5;
+  animation-duration: 3.5s;
 }
 
 @-webkit-keyframes type {

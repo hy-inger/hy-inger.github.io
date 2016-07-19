@@ -1,6 +1,9 @@
 window.onload = function(){
     // document.mozHidden !== undefined
-    var now = 1,next = 1,action = false;
+    var now = 1,
+        next = 1,
+        action = false, // 页面滚动过程不可操作滚动
+        roll = false;
     var section = document.querySelectorAll('.item'),
             num = section.length;
     var animation = function(next,prev,next_action,prev_action){
@@ -25,6 +28,24 @@ window.onload = function(){
             action = false;
             prev_item.style.display='none';
             module.removeEvent(next_item,'webkitAnimationEnd',anim_end);  
+
+            if(module.hasClass(next_item,'roll')&&!roll){
+                roll = true;
+                console.log(roll);
+                // 滚轴效果 
+                var content = document.querySelectorAll('.content');
+                for(var i=0;i<content.length;i++){
+                    slideDown(i);
+                    function slideDown(i){
+                        var timer = setTimeout(function(){
+                            module.slideDown(content[i],1000);
+                            clearTimeout(timer);
+                        },i*800);
+                    }
+                    
+                    
+                }
+            }
         }
         var anim_start = function(e){
             next_item.style.display = 'block';
@@ -91,18 +112,6 @@ window.onload = function(){
         }
     },true);
 
-    /* 滚轴效果 */
-    var content = document.querySelectorAll('.content');
-    for(var i=0;i<content.length;i++){
-        slideDown(i);
-        function slideDown(i){
-            var timer = setTimeout(function(){
-                module.slideDown(content[i],1000);
-                clearTimeout(timer);
-            },i*800);
-        }
-        
-        
-    }
+    
     //module.slideDown(content,'1200');
 }
