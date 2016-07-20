@@ -347,236 +347,236 @@ section.prev-slide-down {
 
 /* line 246, ../sass/index.scss */
 .tech .tag1 {
-  opacity: 0.09183;
-  padding: 0.00918rem 0.02755rem;
-  font-size: 1.15792rem;
-  color: #030b12;
-  animation: 5.34986s fade 0.3s ease infinite;
+  opacity: 0.92852;
+  padding: 0.09285rem 0.27855rem;
+  font-size: 0.79103rem;
+  color: #1c6fba;
+  animation: 9.10465s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.09183;
+    opacity: 0.92852;
   }
   30% {
-    opacity: 0.39183;
+    opacity: 1.22852;
   }
   50% {
-    opacity: 0.69183;
+    opacity: 1.52852;
   }
   70% {
-    opacity: 0.39183;
+    opacity: 1.22852;
   }
   100% {
-    opacity: 0.09183;
+    opacity: 0.92852;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag2 {
-  opacity: 0.77155;
-  padding: 0.07715rem 0.23146rem;
-  font-size: 0.81913rem;
-  color: #175d9a;
-  animation: 5.83154s fade 0.3s ease infinite;
+  opacity: 0.73953;
+  padding: 0.07395rem 0.22186rem;
+  font-size: 0.08206rem;
+  color: #165994;
+  animation: 9.16779s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.77155;
+    opacity: 0.73953;
   }
   30% {
-    opacity: 1.07155;
+    opacity: 1.03953;
   }
   50% {
-    opacity: 1.37155;
+    opacity: 1.33953;
   }
   70% {
-    opacity: 1.07155;
+    opacity: 1.03953;
   }
   100% {
-    opacity: 0.77155;
+    opacity: 0.73953;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag3 {
-  opacity: 0.30709;
-  padding: 0.03071rem 0.09213rem;
-  font-size: 0.90133rem;
-  color: #09253d;
-  animation: 6.40214s fade 0.3s ease infinite;
+  opacity: 0.0586;
+  padding: 0.00586rem 0.01758rem;
+  font-size: 1.06711rem;
+  color: #02070c;
+  animation: 6.80891s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.30709;
+    opacity: 0.0586;
   }
   30% {
-    opacity: 0.60709;
+    opacity: 0.3586;
   }
   50% {
-    opacity: 0.90709;
+    opacity: 0.6586;
   }
   70% {
-    opacity: 0.60709;
+    opacity: 0.3586;
   }
   100% {
-    opacity: 0.30709;
+    opacity: 0.0586;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag4 {
-  opacity: 0.58853;
-  padding: 0.05885rem 0.17656rem;
-  font-size: 1.06754rem;
-  color: #124776;
-  animation: 8.3395s fade 0.3s ease infinite;
+  opacity: 0.81234;
+  padding: 0.08123rem 0.2437rem;
+  font-size: 0.21251rem;
+  color: #1861a2;
+  animation: 9.65703s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.58853;
+    opacity: 0.81234;
   }
   30% {
-    opacity: 0.88853;
+    opacity: 1.11234;
   }
   50% {
-    opacity: 1.18853;
+    opacity: 1.41234;
   }
   70% {
-    opacity: 0.88853;
+    opacity: 1.11234;
   }
   100% {
-    opacity: 0.58853;
+    opacity: 0.81234;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag5 {
-  opacity: 0.36814;
-  padding: 0.03681rem 0.11044rem;
-  font-size: 0.70414rem;
-  color: #0b2c4a;
-  animation: 9.83226s fade 0.3s ease infinite;
+  opacity: 0.06884;
+  padding: 0.00688rem 0.02065rem;
+  font-size: 0.719rem;
+  color: #02080e;
+  animation: 8.74011s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.36814;
+    opacity: 0.06884;
   }
   30% {
-    opacity: 0.66814;
+    opacity: 0.36884;
   }
   50% {
-    opacity: 0.96814;
+    opacity: 0.66884;
   }
   70% {
-    opacity: 0.66814;
+    opacity: 0.36884;
   }
   100% {
-    opacity: 0.36814;
+    opacity: 0.06884;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag6 {
-  opacity: 0.50727;
-  padding: 0.05073rem 0.15218rem;
-  font-size: 0.76418rem;
-  color: #0f3d65;
-  animation: 8.37115s fade 0.3s ease infinite;
+  opacity: 0.71848;
+  padding: 0.07185rem 0.21554rem;
+  font-size: 0.69691rem;
+  color: #165690;
+  animation: 8.21575s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.50727;
+    opacity: 0.71848;
   }
   30% {
-    opacity: 0.80727;
+    opacity: 1.01848;
   }
   50% {
-    opacity: 1.10727;
+    opacity: 1.31848;
   }
   70% {
-    opacity: 0.80727;
+    opacity: 1.01848;
   }
   100% {
-    opacity: 0.50727;
+    opacity: 0.71848;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag7 {
-  opacity: 0.81279;
-  padding: 0.08128rem 0.24384rem;
-  font-size: 0.01767rem;
-  color: #1862a3;
-  animation: 9.61774s fade 0.3s ease infinite;
+  opacity: 0.77341;
+  padding: 0.07734rem 0.23202rem;
+  font-size: 0.80064rem;
+  color: #175d9b;
+  animation: 5.01713s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.81279;
+    opacity: 0.77341;
   }
   30% {
-    opacity: 1.11279;
+    opacity: 1.07341;
   }
   50% {
-    opacity: 1.41279;
+    opacity: 1.37341;
   }
   70% {
-    opacity: 1.11279;
+    opacity: 1.07341;
   }
   100% {
-    opacity: 0.81279;
+    opacity: 0.77341;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag8 {
-  opacity: 0.49259;
-  padding: 0.04926rem 0.14778rem;
-  font-size: 0.77613rem;
-  color: #0f3b63;
-  animation: 7.99303s fade 0.3s ease infinite;
+  opacity: 0.81682;
+  padding: 0.08168rem 0.24505rem;
+  font-size: 0.57832rem;
+  color: #1962a3;
+  animation: 5.00976s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.49259;
+    opacity: 0.81682;
   }
   30% {
-    opacity: 0.79259;
+    opacity: 1.11682;
   }
   50% {
-    opacity: 1.09259;
+    opacity: 1.41682;
   }
   70% {
-    opacity: 0.79259;
+    opacity: 1.11682;
   }
   100% {
-    opacity: 0.49259;
+    opacity: 0.81682;
   }
 }
 /* line 246, ../sass/index.scss */
 .tech .tag9 {
-  opacity: 0.18116;
-  padding: 0.01812rem 0.05435rem;
-  font-size: 0.6919rem;
-  color: #051624;
-  animation: 6.26625s fade 0.3s ease infinite;
+  opacity: 0.12623;
+  padding: 0.01262rem 0.03787rem;
+  font-size: 0.57055rem;
+  color: #040f19;
+  animation: 7.45625s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.18116;
+    opacity: 0.12623;
   }
   30% {
-    opacity: 0.48116;
+    opacity: 0.42623;
   }
   50% {
-    opacity: 0.78116;
+    opacity: 0.72623;
   }
   70% {
-    opacity: 0.48116;
+    opacity: 0.42623;
   }
   100% {
-    opacity: 0.18116;
+    opacity: 0.12623;
   }
 }
 /* line 271, ../sass/index.scss */
@@ -690,17 +690,17 @@ section.info .type {
   animation-name: type;
   padding: .1rem 0;
 }
-/* line 372, ../sass/index.scss */
+/* line 371, ../sass/index.scss */
 section.info .name {
   color: #333;
   width: 1rem;
   font-size: .5rem;
   font-family: Arial;
   font-weight: bold;
-  animation-timing-function: steps(2, end);
-  animation-duration: 0.8s;
+  /* animation-timing-function:steps(3,end);
+  animation-duration:1.5s; */
 }
-/* line 381, ../sass/index.scss */
+/* line 380, ../sass/index.scss */
 section.info .position, section.info .email, section.info .phone {
   color: #757171;
   font-size: .3rem;
@@ -708,11 +708,11 @@ section.info .position, section.info .email, section.info .phone {
   animation-timing-function: steps(11, end);
   animation-duration: 2.5s;
 }
-/* line 388, ../sass/index.scss */
+/* line 387, ../sass/index.scss */
 section.info .phone {
   width: 1.7rem;
 }
-/* line 391, ../sass/index.scss */
+/* line 390, ../sass/index.scss */
 section.info .education {
   color: #969595;
   font-size: .25rem;

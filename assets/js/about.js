@@ -15,23 +15,23 @@ window.onload = function(){
                 module.addClass(next_item,next_action);
                 module.addClass(prev_item,prev_action);
         var anim_end = function(e){
-
+            console.log('prev');
             module.removeClass(prev_item,'active');
             module.removeClass(prev_item,prev_action);
 
+            module.addClass(next_item,'active');
             module.removeClass(next_item,next_action);
-            module.addClass(next_item,'active');  
 
             module.addClass(next_nav,'active');
             module.removeClass(prev_nav,'active');
 
             action = false;
             prev_item.style.display='none';
-            module.removeEvent(next_item,'webkitAnimationEnd',anim_end);  
+
+            module.removeEvent(prev_item,'webkitAnimationEnd',anim_end);  
 
             if(module.hasClass(next_item,'roll')&&!roll){
                 roll = true;
-                console.log(roll);
                 // 滚轴效果 
                 var content = document.querySelectorAll('.content');
                 for(var i=0;i<content.length;i++){
@@ -47,12 +47,13 @@ window.onload = function(){
                 }
             }
         }
+
         var anim_start = function(e){
             next_item.style.display = 'block';
             module.removeEvent(prev_item,'webkitAnimationStart',anim_start);
         }
         module.addEvent(prev_item,'webkitAnimationStart',anim_start);
-        module.addEvent(next_item,'webkitAnimationEnd',anim_end);
+        module.addEvent(prev_item,'webkitAnimationEnd',anim_end);
              
     }
     /* 鼠标滚轮事件切换页面 */
