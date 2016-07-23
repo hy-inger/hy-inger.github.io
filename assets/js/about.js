@@ -15,7 +15,10 @@ window.onload = function(){
                 module.addClass(next_item,next_action);
                 module.addClass(prev_item,prev_action);
         var anim_end = function(e){
-            console.log('prev');
+            if(!module.hasClass(e.target,'item')){
+                return;
+            }
+
             module.removeClass(prev_item,'active');
             module.removeClass(prev_item,prev_action);
 

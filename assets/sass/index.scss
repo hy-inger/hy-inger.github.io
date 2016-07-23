@@ -388,8 +388,8 @@ section.info{
         font-size: .5rem;
         font-family: Arial;
         font-weight: bold;
-        /* animation-timing-function:steps(3,end);
-        animation-duration:1.5s; */
+        animation-timing-function:steps(3,end);
+        animation-duration:.8s;
     }
     .position,.email,.phone{
         color:#757171;
