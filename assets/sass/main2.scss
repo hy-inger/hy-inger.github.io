@@ -40,10 +40,31 @@ a:focus {
 }
 a:hover, a:active {
   outline: 0;
+  text-decoration: underline;
 }
 
 .main {
     padding-bottom: 140px;
+}
+.pagination {
+  margin: 20px 10px;
+  text-align: center;
+  ul{
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .inline-list{
+    padding-left: 0;
+    li{
+        display: inline;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+  }
+  .current-page{
+    font-weight: 700;
+  }
 }
 .footer-wrapper {
   *zoom: 1;
@@ -65,8 +86,8 @@ a:hover, a:active {
         color:#555;
     }
 }
-
- .dl-menuwrapper {
+/* nav menu */
+.dl-menuwrapper {
     position: fixed;
     width:100%;
     opacity: 0;
@@ -127,6 +148,9 @@ a:hover, a:active {
                   transition-duration: 0.2s;
                   transition-timing-function: ease-in-out;
                   transition-delay: 0s;
+            }
+            &:hover{
+              text-decoration: none;
             }
             &:hover::before{
                 visibility: visible;
@@ -301,24 +325,53 @@ a:hover, a:active {
     }
 
 }
-.pagination {
-  margin: 20px 10px;
-  text-align: center;
-  ul{
-    display: inline;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .inline-list{
-    padding-left: 0;
+
+/* tags */
+.tags{
+  .entry-meta{
     li{
-        display: inline;
-        padding-left: 4px;
-        padding-right: 4px;
+      display: inline-block;
+      padding:.05rem .23rem .05rem .2rem;
+      margin: 0 .1rem .2rem .1rem;
+      background: #ccc;
+      position: relative;
+      @include border-radius(.03rem);
+      font-size: .18rem;
+      span{
+        position: absolute;
+        top:0;
+        right:.15rem;
+        font-size: .14rem;
+
       }
+      &:before{
+        content: " ";
+        position: absolute;
+        border-color: transparent transparent transparent #fff;
+        border-width: .14rem;
+        border-style: solid;
+        left:0;
+        top:0;
+
+      }
+      &:after{
+        content: " ";
+        position: absolute;
+        width: .05rem;
+        height:.05rem;
+        @include border-radius(.05rem);
+        background: #fff;
+        right:.05rem;
+        top:50%;
+        margin-top: -.025rem;
+      }
+    }
   }
-  .current-page{
-    font-weight: 700;
+  .hentry{
+    h2{
+      font-size: .25rem;
+      color:#333;
+    }
   }
 }
 

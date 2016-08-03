@@ -6,22 +6,22 @@ description: "An archive of posts sorted by tag."
 image:
   feature: http://seeksky.qiniudn.com/03.jpg-clip.jpg
 ---
+<section class="tags">
+	<ul class="entry-meta">
+	{% assign tags_list = site.tags %}  
+	  {% if tags_list.first[0] == null %}
+	    {% for tag in tags_list %} 
+	    	<li><a href="#{{ tag }}" class="tag">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+	    {% endfor %}
+	  {% else %}
+	    {% for tag in tags_list %} 
+	    	<li><a href="#{{ tag[0] }}" class="tag">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+	    {% endfor %}
+	  {% endif %}
+	{% assign tags_list = nil %}
+	</ul>
 
-<ul class="entry-meta inline-list">
-{% assign tags_list = site.tags %}  
-  {% if tags_list.first[0] == null %}
-    {% for tag in tags_list %} 
-    	<li><a href="#{{ tag }}" class="tag">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
-    {% endfor %}
-  {% else %}
-    {% for tag in tags_list %} 
-    	<li><a href="#{{ tag[0] }}" class="tag">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
-    {% endfor %}
-  {% endif %}
-{% assign tags_list = nil %}
-</ul>
-
-{% for tag in site.tags %} 
+	{% for tag in site.tags %} 
 	<article class="hentry">
 	<h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
 		<ul>
@@ -37,4 +37,5 @@ image:
 		{% assign group = nil %}
 		</ul>
 	</article><!-- /.hentry -->
-{% endfor %}
+	{% endfor %}
+</section>
