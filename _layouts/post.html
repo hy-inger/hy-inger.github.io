@@ -13,7 +13,7 @@
 {% include browser-upgrade.html %}
 {% include navigation.html %}
 
-<div id="main" role="main">
+<div class="main" role="main">
   <article class="hentry">
     <header class="header-title">
       <div class="header-title-wrap">
@@ -59,7 +59,7 @@
     </div><!-- /.entry-content -->
     {% if site.disqus_shortname and page.comments %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
     {% if site.related_posts.size %}
-    <div class="read-more">
+    <div class="read-more clearfix">
       <div class="read-more-list">
         {% for post in site.related_posts limit:2 offset:1 %}
           <div class="list-item">
