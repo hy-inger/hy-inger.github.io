@@ -12,7 +12,6 @@
 
 {% include browser-upgrade.html %}
 {% include navigation.html %}
-
 <div id="main" role="main">
   <article class="hentry">
     <header class="header-title">
@@ -29,7 +28,7 @@
       {{ content }}
       <footer class="entry-meta">
         <span class="entry-tags">{% for tag in page.tags %}
-          <a href="{{ site.url }}/tags/#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>
+          <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>
           {% unless forloop.last %}{% endunless %}{% endfor %}
         </span>
         <span>

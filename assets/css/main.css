@@ -1962,6 +1962,7 @@ svg:not(:root) {
   #post-index #main {
     margin-left: 20px;
     margin-right: 20px;
+    padding-top: 250px;
   }
 }
 @media only screen and (min-width: 62.5em) {
