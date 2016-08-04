@@ -7,35 +7,34 @@ image:
   feature: http://seeksky.qiniudn.com/03.jpg-clip.jpg
 ---
 <section class="tags">
-	<ul class="entry-meta">
-	{% assign tags_list = site.tags %}  
-	  {% if tags_list.first[0] == null %}
-	    {% for tag in tags_list %} 
-	    	<li><a href="#{{ tag }}" class="tag">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
-	    {% endfor %}
-	  {% else %}
-	    {% for tag in tags_list %} 
-	    	<li><a href="#{{ tag[0] }}" class="tag">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
-	    {% endfor %}
-	  {% endif %}
-	{% assign tags_list = nil %}
-	</ul>
-
-	{% for tag in site.tags %} 
-	<article class="hentry">
-	<h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
-		<ul>
-		{% assign pages_list = tag[1] %}  
-		{% for post in pages_list %}
-			{% if post.title != null %}
-			{% if group == null or group == post.group %}
-				<li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-			{% endif %}
-			{% endif %}
-		{% endfor %}
-		{% assign pages_list = nil %}
-		{% assign group = nil %}
-		</ul>
-	</article><!-- /.hentry -->
-	{% endfor %}
+    <ul class="entry-meta">
+    {% assign tags_list = site.tags %}  
+      {% if tags_list.first[0] == null %}
+        {% for tag in tags_list %} 
+        	<li><a href="#{{ tag }}" class="tag">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+        {% endfor %}
+      {% else %}
+        {% for tag in tags_list %} 
+        	<li><a href="#{{ tag[0] }}" class="tag">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+        {% endfor %}
+      {% endif %}
+    {% assign tags_list = nil %}
+    </ul>
+    {% for tag in site.tags %} 
+    <article class="hentry">
+    <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+        <ul>
+        {% assign pages_list = tag[1] %}  
+        {% for post in pages_list %}
+        	{% if post.title != null %}
+        	{% if group == null or group == post.group %}
+        	   <li class="entry-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }} {{post.date | date:'%F'}}</a></li>
+        	{% endif %}
+        	{% endif %}
+        {% endfor %}
+        {% assign pages_list = nil %}
+        {% assign group = nil %}
+        </ul>
+    </article>
+    {% endfor %}
 </section>

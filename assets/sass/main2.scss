@@ -193,7 +193,8 @@ a:hover, a:active {
 }
 
 .main .hentry{
-    box-shadow: 6px 8px 35px 0px #D6D4D4;
+    box-shadow: 4px 5px 18px -5px #D6D4D4;
+    border:1px solid #ddd;
     margin-bottom: 30px;
     opacity: 0;
      -webkit-animation:drop 1s ease 0.5s;
@@ -234,14 +235,14 @@ a:hover, a:active {
             pointer-events: none;
             position: absolute;
             content: '';
-            height: 0;
-            width: 0;
+            height: 0px;
+            width: 0px;
             top: 0;
             right: 0;
             background: white;
             /* IE9 */
-            background: linear-gradient(225deg, white 45%, #D6D3D3  50%, #fff 56%, white 80%);
-            box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(225deg, white 45%, #D6D3D3  50%, #fff 56%, #CECDCD 80%);
+            //box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
             -webkit-transition-duration: 0.5s;
             transition-duration: 0.5s;
             -webkit-transition-property: width, height;
@@ -325,8 +326,70 @@ a:hover, a:active {
     }
 
 }
-
+/* archives */
+.archives{
+    padding:.2rem;
+    border-left: .04rem solid #eee!important;
+    &.hentry{
+        box-shadow: none;
+    }
+    blockquote{
+        font-size: .23rem;
+        margin-bottom: .3rem;
+        position:relative;
+        &:before{
+            content: " ";
+            position: absolute;
+            width:.12rem;
+            height: .12rem;
+            background: #B1A4A4;
+            @include border-radius(.12rem);
+            left:-.28rem;        // padding .2rem + 1/2width .06rem + 1/2border .02rem;
+            top:50%;
+            margin-top: -.06rem;
+        }
+    }
+    .collection{
+        margin-bottom: .55rem;
+    }
+    .collection-item{
+        font-size: .16rem;
+        margin-top:.3rem;
+        padding-left: .1rem;
+        padding-bottom: .05rem;
+        border-bottom: .01rem dotted #ddd;
+        position: relative;
+        &:before{
+            content: " ";
+            position: absolute;
+            box-sizing:border-box;
+            width:.10rem;
+            height: .10rem;
+            background: #B1A4A4;
+            border:.03rem solid #E0DEDE;
+            @include border-radius(.05rem);
+            left:-.27rem;        // padding .2rem + 1/2width .05rem + 1/2border .02rem;
+            top:50%;
+            margin-top: -.08rem;
+        }
+        &:hover{
+            border-color:#888181;
+        }
+        a{
+            color:#888181;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .time{
+            font-style: italic;
+            font-size: .14rem;
+            color:#B1B1B1;
+        }
+    }
+}
 /* tags */
+
 .tags{
   .entry-meta{
     li{

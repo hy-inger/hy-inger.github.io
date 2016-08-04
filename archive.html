@@ -5,11 +5,41 @@ title: All Posts
 permalink: /archive/index.html
 description: "An archive of posts."
 ---
-
+<!-- {% for post in site.posts %}
+  {% capture ym %}
+    {{ post.date | date:"%Y 年 %m 月" }}
+  {% endcapture %}
+  {% if yearmonth != ym %}
+    {% assign yearmonth = ym %}
+  <li><a href="#{{ ym }}">{{ ym }}</a></li>
+  {% endif %}
+{% endfor %} -->
+<section class="archives">
+{% assign first_collection = true %}
 {% for post in site.posts %}
+  {% capture ym %}{{ post.date | date:"%Y 年" }}{% endcapture %}
+  {% if year != ym %}
+    {% if first_collection %}
+        {% assign first_collection = false %}
+    {% else %}
+        </div>
+    {% endif %}
+    {% assign year = ym %}
+    </ul>
+    <div class="collection">
+      <blockquote id="{{ ym }}">{{ ym }}</blockquote>
+    <ul>
+  {% endif %}
+    <li class="collection-item">
+      <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      <time class="time">{{ post.date | date:'%F' }}</time>
+    </li>
+{% endfor %}
+</section>
+<!-- {% for post in site.posts %}
 <article class="hentry">
   <header>
-    <div class="entry-meta"><span class="entry-date date published"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard fn"><a class="url fn" href="{{ site.url }}">{{ site.owner.name }}</a></span>{% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %}</div><!-- /.entry-meta -->
+    <div class="entry-meta"><span class="entry-date date published"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard fn"><a class="url fn" href="{{ site.url }}">{{ site.owner.name }}</a></span>{% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %}</div>/.entry-meta
     {% if post.link %}
       <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}"><i class="icon-double-angle-right"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
     {% else %}
@@ -18,6 +48,6 @@ description: "An archive of posts."
   </header>
   <div class="entry-content">
     <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 120 }}{% endif %} <a href="{{ site.url }}{{ post.url }}">Continue reading</a></p>
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
+  </div>/.entry-content
+</article>/.hentry
+{% endfor %} -->
