@@ -1,0 +1,18 @@
+---
+title: Angular 开发笔记
+tags: [Angular]
+layout: post
+---
+<p>从零开始使用angular碰到很多问题，断断续续记录了一些问题。现在放到这里来。</p>
+<ul>
+    <li>
+        1、ng-if or ng-show.
+       ng-if和ng-show的区别就不详说了。简单点说就是ng-if会销毁dom，ng-show/ng-hide只是使用display：none将dom隐藏。
+       1）、需要频繁显示隐藏切换的元素使用ng-show；
+            不需要的使用ng-if，比如根据角色权限不同显示不同的模块或数据。
+       2）、不是在首次加载渲染的使用ng-if。
+       3）、使用双向数据绑定比较多的使用ng-if。
+       总的来说用ng-if比较多，毕竟ng-if为false时不会创建元素，不会绑定数据，也就不会触发$digest,减少watch过程。
+
+    </li>
+</ul>

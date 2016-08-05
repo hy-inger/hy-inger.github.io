@@ -22,8 +22,9 @@ image:
     </ul>
     {% for tag in site.tags %} 
     <article class="hentry">
+        <a class="target" id="{{ tag[0] }}"></a>
         <div class="tag-title">
-            <h2 class="h2" id="{{ tag[0] }}">{{ tag[0] }}</h2>
+            <h2 class="h2" >{{ tag[0] }}</h2>
             <em class="em"></em>
         </div>
 

@@ -12,5 +12,7 @@ highlighter: rouge
 
 excerpt_separator: "\n"
 
+permalink: /:title
+
 owner:
   name:           Ying Huang (Inger)
