@@ -1,92 +1,747 @@
-/*
-Syntax error: Invalid CSS after "...       left: 0,": expected expression (e.g. 1px, bold), was "}"
-        on line 205 of /home/huangying/blog/hy-inger.github.io/assets/sass/index.scss
+/* line 5, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-Backtrace:
-/home/huangying/blog/hy-inger.github.io/assets/sass/index.scss:205
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1146:in `expected'
-/usr/lib/ruby/vendor_ruby/sass/script/lexer.rb:199:in `expected!'
-/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:471:in `assert_expr'
-/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:253:in `expr'
-/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:470:in `assert_expr'
-/usr/lib/ruby/vendor_ruby/sass/script/parser.rb:49:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1021:in `sass_script'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:881:in `value!'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:858:in `declaration'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:581:in `block in declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `call'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `rethrow'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:591:in `declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:553:in `block_child'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:545:in `block_contents'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:534:in `block'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:528:in `ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:590:in `block in declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `call'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `rethrow'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:591:in `declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:553:in `block_child'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:545:in `block_contents'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:534:in `block'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:528:in `ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:590:in `block in declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `call'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:1122:in `rethrow'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:591:in `declaration_or_ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:553:in `block_child'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:545:in `block_contents'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:534:in `block'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:528:in `ruleset'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:552:in `block_child'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:545:in `block_contents'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:82:in `stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/scss/parser.rb:27:in `parse'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:342:in `_to_tree'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:315:in `_render'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:262:in `render'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:140:in `block (2 levels) in compile'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:126:in `timed'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:139:in `block in compile'
-/usr/lib/ruby/vendor_ruby/compass/logger.rb:45:in `red'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:138:in `compile'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:118:in `compile_if_required'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:103:in `block (2 levels) in run'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:101:in `each'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:101:in `block in run'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:126:in `timed'
-/usr/lib/ruby/vendor_ruby/compass/compiler.rb:100:in `run'
-/usr/lib/ruby/vendor_ruby/compass/commands/watch_project.rb:147:in `recompile'
-/usr/lib/ruby/vendor_ruby/fssm/path.rb:73:in `call'
-/usr/lib/ruby/vendor_ruby/fssm/path.rb:73:in `run_callback'
-/usr/lib/ruby/vendor_ruby/fssm/path.rb:55:in `callback_action'
-/usr/lib/ruby/vendor_ruby/fssm/path.rb:35:in `update'
-/usr/lib/ruby/vendor_ruby/fssm/state/directory.rb:39:in `block in modified'
-/usr/lib/ruby/vendor_ruby/fssm/state/directory.rb:37:in `each'
-/usr/lib/ruby/vendor_ruby/fssm/state/directory.rb:37:in `modified'
-/usr/lib/ruby/vendor_ruby/fssm/state/directory.rb:18:in `refresh'
-/usr/lib/ruby/vendor_ruby/fssm/backends/inotify.rb:12:in `block in add_handler'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:205:in `call'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:205:in `block in watch'
-/usr/lib/ruby/vendor_ruby/rb-inotify/watcher.rb:41:in `[]'
-/usr/lib/ruby/vendor_ruby/rb-inotify/watcher.rb:41:in `callback!'
-/usr/lib/ruby/vendor_ruby/rb-inotify/event.rb:128:in `callback!'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:238:in `block in process'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:238:in `each'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:238:in `process'
-/usr/lib/ruby/vendor_ruby/rb-inotify/notifier.rb:221:in `run'
-/usr/lib/ruby/vendor_ruby/fssm/backends/inotify.rb:20:in `run'
-/usr/lib/ruby/vendor_ruby/fssm/monitor.rb:26:in `run'
-/usr/lib/ruby/vendor_ruby/fssm.rb:67:in `monitor'
-/usr/lib/ruby/vendor_ruby/compass/commands/watch_project.rb:87:in `perform'
-/usr/lib/ruby/vendor_ruby/compass/commands/base.rb:18:in `execute'
-/usr/lib/ruby/vendor_ruby/compass/commands/project_base.rb:19:in `execute'
-/usr/lib/ruby/vendor_ruby/compass/exec/sub_command_ui.rb:43:in `perform!'
-/usr/lib/ruby/vendor_ruby/compass/exec/sub_command_ui.rb:15:in `run!'
-/usr/bin/compass:30:in `block in <main>'
-/usr/bin/compass:44:in `call'
-/usr/bin/compass:44:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...       left: 0,\": expected expression (e.g. 1px, bold), was \"}\"\A         on line 205 of /home/huangying/blog/hy-inger.github.io/assets/sass/index.scss"; }
+/* line 22, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Ruby/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/index.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 9, ../sass/index.scss */
+.clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 12, ../sass/index.scss */
+html {
+  font-size: 100px;
+}
+
+/* line 15, ../sass/index.scss */
+body {
+  height: 100%;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+/* line 20, ../sass/index.scss */
+.cantainer {
+  height: 100%;
+}
+
+/* line 23, ../sass/index.scss */
+.nav {
+  position: fixed;
+  top: 40%;
+  left: 0.2rem;
+  z-index: 99;
+}
+/* line 28, ../sass/index.scss */
+.nav ul li.step {
+  width: 0.1rem;
+  height: 0.1rem;
+  border: 0.01rem solid #EF7883;
+  border-radius: 0.1rem;
+  margin: 0.08rem;
+  cursor: pointer;
+  opacity: 0.5;
+}
+/* line 37, ../sass/index.scss */
+.nav ul li.active {
+  opacity: 1;
+}
+
+/* line 42, ../sass/index.scss */
+section.item {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: none;
+  padding: 0 .5rem;
+}
+
+/* line 50, ../sass/index.scss */
+section.item1 {
+  background: #ddd;
+}
+
+/* line 53, ../sass/index.scss */
+section.item2 {
+  background: #F3DBDB;
+}
+
+/* line 56, ../sass/index.scss */
+section.item3 {
+  background: #DBF3DB;
+}
+
+/* line 59, ../sass/index.scss */
+section.item4 {
+  background: #DBE8F3;
+}
+
+/* line 62, ../sass/index.scss */
+section.item5 {
+  background: #DBE8F3;
+}
+
+/* line 65, ../sass/index.scss */
+section.active {
+  display: block;
+}
+
+/* line 68, ../sass/index.scss */
+section.prev-scale-down {
+  -webkit-animation: scaleDown 1s ease;
+  opacity: 0;
+}
+
+/* line 73, ../sass/index.scss */
+section.next-slide-up {
+  -webkit-animation: slideUp 1s ease;
+  opacity: 1;
+}
+
+/* line 77, ../sass/index.scss */
+section.next-scale-up {
+  -webkit-animation: scaleUp 1s ease;
+  opacity: 0;
+}
+
+/* line 81, ../sass/index.scss */
+section.prev-slide-down {
+  -webkit-animation: slideDown 1s ease;
+  opacity: 1;
+}
+
+@-webkit-keyframes scaleDown {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.8) translateY(50%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.5) translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* line 126, ../sass/index.scss */
+.timeline {
+  padding: .5rem .5rem;
+}
+/* line 128, ../sass/index.scss */
+.timeline::before {
+  content: ' ';
+  width: 0.04rem;
+  height: 100%;
+  display: block;
+  background: #7EA0CC;
+  position: absolute;
+  left: .6rem;
+  top: 0;
+}
+/* line 139, ../sass/index.scss */
+.timeline .timeline-block {
+  position: relative;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+/* line 143, ../sass/index.scss */
+.timeline .timeline-block:first-child {
+  margin-top: .3rem;
+}
+/* line 148, ../sass/index.scss */
+.timeline .timeline-point {
+  position: absolute;
+  width: .2rem;
+  height: .2rem;
+  border: 0.04rem solid #B8C6D8;
+  border-radius: .2rem;
+  background: #7EA0CC;
+  left: 0.02rem;
+  top: 0.06rem;
+}
+/* line 158, ../sass/index.scss */
+.timeline .timeline-main {
+  background: #fff;
+  padding: .2rem;
+  position: relative;
+  border-radius: 0.05rem;
+  margin-left: .4rem;
+}
+/* line 164, ../sass/index.scss */
+.timeline .timeline-main:before {
+  content: ' ';
+  width: 0.01rem;
+  height: 0.01rem;
+  border-width: 0.06rem;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  display: block;
+  position: absolute;
+  top: 0.08rem;
+  left: -0.12rem;
+}
+/* line 178, ../sass/index.scss */
+.timeline .h3 {
+  font-size: .2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: .1rem;
+}
+/* line 184, ../sass/index.scss */
+.timeline .h5 {
+  font-size: 0.14rem;
+  color: #ccc;
+}
+/* line 188, ../sass/index.scss */
+.timeline .timeline-content {
+  font-size: 0.16rem;
+  line-height: .2rem;
+  color: #696868;
+}
+/* line 194, ../sass/index.scss */
+.timeline .experience .li {
+  padding-top: 0.1rem;
+  font-size: 0.14rem;
+  line-height: 0.2525rem;
+  padding-left: 0.3rem;
+  position: relative;
+}
+/* line 200, ../sass/index.scss */
+.timeline .experience .li .fa {
+  color: #16D827;
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+}
+@media only screen and (min-width: 1170px) {
+  /* line 209, ../sass/index.scss */
+  .timeline::before {
+    left: 50%;
+  }
+  /* line 212, ../sass/index.scss */
+  .timeline .timeline-block {
+    margin-bottom: .3rem;
+  }
+  /* line 214, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) {
+    overflow: hidden;
+    *zoom: 1;
+  }
+  /* line 217, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) .timeline-main {
+    float: right;
+  }
+  /* line 220, ../sass/index.scss */
+  .timeline .timeline-block:nth-child(even) .timeline-main:before {
+    left: -.12rem;
+    z-index: 2;
+    width: 0.01rem;
+    height: 0.01rem;
+    border-color: transparent #fff transparent transparent;
+  }
+  /* line 229, ../sass/index.scss */
+  .timeline .timeline-point {
+    left: 50%;
+    margin-left: -0.09rem;
+  }
+  /* line 234, ../sass/index.scss */
+  .timeline .timeline-main {
+    width: 46%;
+    margin-left: 0;
+  }
+  /* line 237, ../sass/index.scss */
+  .timeline .timeline-main:before {
+    border-color: transparent transparent transparent #fff;
+    left: 100%;
+  }
+}
+
+/* line 246, ../sass/index.scss */
+.tech .tech-tag {
+  width: 50%;
+  margin: 1rem auto;
+}
+/* line 250, ../sass/index.scss */
+.tech .tag {
+  display: inline-block;
+}
+
+/* line 260, ../sass/index.scss */
+.tech .tag1 {
+  opacity: 0.21529;
+  padding: 0.02153rem 0.06459rem;
+  font-size: 0.66653rem;
+  color: #061a2b;
+  animation: 6.44287s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.21529;
+  }
+  30% {
+    opacity: 0.51529;
+  }
+  50% {
+    opacity: 0.81529;
+  }
+  70% {
+    opacity: 0.51529;
+  }
+  100% {
+    opacity: 0.21529;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag2 {
+  opacity: 0.26009;
+  padding: 0.02601rem 0.07803rem;
+  font-size: 0.4541rem;
+  color: #081f34;
+  animation: 8.67341s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.26009;
+  }
+  30% {
+    opacity: 0.56009;
+  }
+  50% {
+    opacity: 0.86009;
+  }
+  70% {
+    opacity: 0.56009;
+  }
+  100% {
+    opacity: 0.26009;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag3 {
+  opacity: 0.70042;
+  padding: 0.07004rem 0.21013rem;
+  font-size: 0.22963rem;
+  color: #15548c;
+  animation: 6.91402s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.70042;
+  }
+  30% {
+    opacity: 1.00042;
+  }
+  50% {
+    opacity: 1.30042;
+  }
+  70% {
+    opacity: 1.00042;
+  }
+  100% {
+    opacity: 0.70042;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag4 {
+  opacity: 0.66424;
+  padding: 0.06642rem 0.19927rem;
+  font-size: 0.15049rem;
+  color: #145085;
+  animation: 6.78651s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.66424;
+  }
+  30% {
+    opacity: 0.96424;
+  }
+  50% {
+    opacity: 1.26424;
+  }
+  70% {
+    opacity: 0.96424;
+  }
+  100% {
+    opacity: 0.66424;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag5 {
+  opacity: 0.62594;
+  padding: 0.06259rem 0.18778rem;
+  font-size: 0.635rem;
+  color: #134b7d;
+  animation: 9.89492s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.62594;
+  }
+  30% {
+    opacity: 0.92594;
+  }
+  50% {
+    opacity: 1.22594;
+  }
+  70% {
+    opacity: 0.92594;
+  }
+  100% {
+    opacity: 0.62594;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag6 {
+  opacity: 0.72348;
+  padding: 0.07235rem 0.21704rem;
+  font-size: 0.40807rem;
+  color: #165791;
+  animation: 7.27036s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.72348;
+  }
+  30% {
+    opacity: 1.02348;
+  }
+  50% {
+    opacity: 1.32348;
+  }
+  70% {
+    opacity: 1.02348;
+  }
+  100% {
+    opacity: 0.72348;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag7 {
+  opacity: 0.5428;
+  padding: 0.05428rem 0.16284rem;
+  font-size: 0.6938rem;
+  color: #10416d;
+  animation: 9.73881s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.5428;
+  }
+  30% {
+    opacity: 0.8428;
+  }
+  50% {
+    opacity: 1.1428;
+  }
+  70% {
+    opacity: 0.8428;
+  }
+  100% {
+    opacity: 0.5428;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag8 {
+  opacity: 0.01666;
+  padding: 0.00167rem 0.005rem;
+  font-size: 1.08985rem;
+  color: #000203;
+  animation: 5.49951s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.01666;
+  }
+  30% {
+    opacity: 0.31666;
+  }
+  50% {
+    opacity: 0.61666;
+  }
+  70% {
+    opacity: 0.31666;
+  }
+  100% {
+    opacity: 0.01666;
+  }
+}
+/* line 260, ../sass/index.scss */
+.tech .tag9 {
+  opacity: 0.17718;
+  padding: 0.01772rem 0.05315rem;
+  font-size: 1.0621rem;
+  color: #051523;
+  animation: 8.56015s fade 0.3s ease infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.17718;
+  }
+  30% {
+    opacity: 0.47718;
+  }
+  50% {
+    opacity: 0.77718;
+  }
+  70% {
+    opacity: 0.47718;
+  }
+  100% {
+    opacity: 0.17718;
+  }
+}
+/* line 285, ../sass/index.scss */
+.reel {
+  float: left;
+  margin: 0 auto;
+  padding: 0.5rem calc(((100% / 3) - 2rem) / 2);
+  width: calc(100% / 3);
+}
+/* line 291, ../sass/index.scss */
+.reel .nail {
+  width: .1rem;
+  height: .1rem;
+  border-radius: .1rem;
+  background: #333;
+  margin: 0 auto .69rem auto;
+  position: relative;
+  background: -webkit-radial-gradient(#fff, #333);
+  z-index: 3;
+  box-shadow: 0.02rem 0 0.11rem #ccc;
+}
+/* line 301, ../sass/index.scss */
+.reel .nail:before, .reel .nail:after {
+  content: ' ';
+  position: absolute;
+  width: 0.03rem;
+  height: 1rem;
+  background: #ccc;
+  top: -0.06rem;
+  z-index: 1;
+  box-shadow: 0.02rem 0 0.11rem #bbb;
+}
+/* line 311, ../sass/index.scss */
+.reel .nail:before {
+  transform: rotate(45deg);
+  left: -0.35rem;
+}
+/* line 315, ../sass/index.scss */
+.reel .nail:after {
+  transform: rotate(135deg);
+  left: 0.42rem;
+}
+/* line 320, ../sass/index.scss */
+.reel .shaft {
+  width: 2rem;
+  height: .25rem;
+  /* border:0.2rem solid #333; */
+  background: -webkit-linear-gradient(top, #ccc, #fff 50%, #ccc 95%);
+  position: relative;
+}
+/* line 327, ../sass/index.scss */
+.reel .shaft:before, .reel .shaft:after {
+  content: ' ';
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  background: #333;
+  top: 50%;
+  margin-top: -0.075rem;
+}
+/* line 336, ../sass/index.scss */
+.reel .shaft:before {
+  left: -0.15rem;
+}
+/* line 339, ../sass/index.scss */
+.reel .shaft:after {
+  right: -0.15rem;
+}
+/* line 347, ../sass/index.scss */
+.reel .content {
+  width: 2rem;
+  height: 3rem;
+  display: none;
+  overflow: hidden;
+  background: -webkit-linear-gradient(top, #fff 5%, #ccc 95%);
+  padding: .1rem;
+  line-height: 20px;
+}
+/* line 355, ../sass/index.scss */
+.reel .content .title {
+  font-size: 0.2rem;
+  color: #333;
+  text-align: center;
+  padding-bottom: .1rem;
+}
+/* line 361, ../sass/index.scss */
+.reel .content .detail {
+  font-size: .12rem;
+  color: #5F5F5F;
+}
+
+/* line 367, ../sass/index.scss */
+section.info {
+  padding-top: .5rem;
+  text-align: center;
+}
+/* line 370, ../sass/index.scss */
+section.info .head {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: .1rem;
+}
+/* line 378, ../sass/index.scss */
+section.info .type {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  animation-name: type;
+  padding: .1rem 0;
+}
+/* line 385, ../sass/index.scss */
+section.info .name {
+  color: #333;
+  width: 1rem;
+  font-size: .5rem;
+  font-family: Arial;
+  font-weight: bold;
+  animation-timing-function: steps(3, end);
+  animation-duration: .8s;
+}
+/* line 394, ../sass/index.scss */
+section.info .position, section.info .email, section.info .phone {
+  color: #757171;
+  font-size: .3rem;
+  width: 3.5rem;
+  animation-timing-function: steps(11, end);
+  animation-duration: 2.5s;
+}
+/* line 401, ../sass/index.scss */
+section.info .phone {
+  width: 1.7rem;
+}
+/* line 404, ../sass/index.scss */
+section.info .education {
+  color: #969595;
+  font-size: .25rem;
+  width: 4.3rem;
+  animation-timing-function: steps(18, end);
+  animation-duration: 3.5s;
+}
+
+@-webkit-keyframes type {
+  from {
+    width: 0;
+  }
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}

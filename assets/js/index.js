@@ -1,9 +1,6 @@
 $(document).ready(function(){
-    /*var index_hentry = $('#post-index .hentry');
-    for(var i=0;i<index_hentry.length;i++){
-        index_hentry[i]
-    }*/
-    $('#post-index .hentry').each(function(i){
+    
+    $('#post-index .hentry,.archives .collection').each(function(i){
         $(this).css({
             'animation-duration':'1s',
             'animation-delay':i*0.4+'s',
@@ -11,13 +8,17 @@ $(document).ready(function(){
         });
     })
 
-    $('.hentry').on('webkitAnimationEnd',function(){
+    $('.archives .collection').on('webkitAnimationStart',function(){
+        $('.archives').css({'border-left-width':'.04rem'});
+    })
+
+    $('.dl-menuwrapper,.hentry,.tags .entry-meta,.archives .collection').on('webkitAnimationEnd',function(){
         $(this).css('opacity','1');
     })
-    $('.dl-menuwrapper').on('webkitAnimationEnd',function(){
+    /*$('').on('webkitAnimationEnd',function(){
         $(this).css({
-            'padding-top':'60px',
+            //'padding-top':'60px',
             'opacity':'1',
         });
-    })
+    })*/
 })

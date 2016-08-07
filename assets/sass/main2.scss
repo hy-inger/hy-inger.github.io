@@ -54,6 +54,9 @@ a:hover, a:active {
 .pagination {
   margin: .2rem .1rem;
   text-align: center;
+  .btn{
+
+  }
   ul{
     display: inline;
     margin-left: .1rem;
@@ -101,13 +104,13 @@ a:hover, a:active {
 .dl-menuwrapper {
     position: fixed;
     width:100%;
-    opacity: 0;
+    //opacity: 0;
+    height: 1.8rem;
+    padding-top: .6rem;
     padding-bottom: .2rem;
     background: #fff;
     z-index: 1000;
-    -webkit-animation: MenuAnimIn 0.6s linear;
-    -moz-animation: MenuAnimIn 0.6s linear;
-    animation: MenuAnimIn 0.6s linear;
+    @include animation(MenuAnimIn 0.6s linear);
     .logo{
         text-align: center;
         margin:0 auto;
@@ -203,14 +206,12 @@ a:hover, a:active {
   clear: both;
 }
 
-.main .hentry{
+.hentry{
     box-shadow: .04rem .05rem .18rem -.05rem #D6D4D4;
     border:1px solid #ddd;
     margin-bottom: .3rem;
     opacity: 0;
-     -webkit-animation:drop 1s ease 0.5s;
-      -moz-animation:drop 1s ease 0.5s;
-      animation:drop 1s ease 0.5s;
+    @include animation(drop 1s ease 0.5s);
     .entry-meta{
         color: #bbbbbb;
         margin:.15rem 0;
@@ -281,7 +282,7 @@ a:hover, a:active {
     }
     .header-title {
           text-align: center;
-          margin: 2.5rem 0 0;
+          margin: 2.1rem 0 0;
           padding: 0 .2rem;
         }
     .header-title h1 {
@@ -294,11 +295,12 @@ a:hover, a:active {
       margin: 0;
       font-size: .18rem;
       color: #888888;
+      margin-bottom: .3rem;
     }
     .read-more {
         position: relative;
         max-width: 6rem;
-        padding: 0px .8rem;
+        //padding: 0px .8rem;
         margin: 0px auto;
         background-color: white;
         box-shadow: 0 0 0 1px fade(#bbbbbb, 10), 0 .06rem .12rem fade(black, 10);
@@ -317,15 +319,15 @@ a:hover, a:active {
         .list-item {
           width: 49%;
           float:left;
-          margin-top: .3rem;
+          margin:.2rem 0;
           text-align: left;
+          font-size: .14rem;
           &:nth-child(2){
             float: right;
             text-align: right;
           }
           h4{
-            font-size: .16rem;
-            margin-bottom: 0;
+            margin-bottom: .05rem;
           }
           span{
             display: block;
@@ -338,9 +340,11 @@ a:hover, a:active {
 /* archives */
 .archives{
     padding:.2rem;
-    border-left: .04rem solid #eee!important;
+    border-left-style: solid;
+    border-left-color: #eee;
     &.hentry{
         box-shadow: none;
+        border:0;
     }
     blockquote{
         font-size: .23rem;
@@ -360,6 +364,8 @@ a:hover, a:active {
     }
     .collection{
         margin-bottom: .55rem;
+        opacity: 0;
+        @include animation(drop 1s ease .5s);
     }
     .collection-item{
         font-size: .16rem;
@@ -397,6 +403,8 @@ a:hover, a:active {
 
 .tags{
   .entry-meta{
+    opacity: 0;
+    @include animation(drop 1s ease);
     li{
       display: inline-block;
       padding:.05rem .23rem .05rem .2rem;
@@ -505,81 +513,24 @@ a:hover, a:active {
 }
 
 
-@-webkit-keyframes MenuAnimIn {
+@include keyframes(MenuAnimIn){
   0% {
-        transform: translateY(.2rem);
+        transform: translateY(-.6rem);
         opacity: 0;
   }
   100% {
-    transform: translateY(.6rem);
+    transform: translateY(0rem);
     opacity: 1;
   }
 }
 
-@-moz-keyframes MenuAnimIn {
-  0% {
-        transform: translateY(.2rem);
-        opacity: 0;
-  }
-  100% {
-    transform: translateY(.6rem);
-    opacity: 1;
-  }
-}
-
-@keyframes MenuAnimIn {
-  0% {
-        transform: translateY(.2rem);
-        opacity: 0;
-  }
-  100% {
-    transform: translateY(.6rem);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes drop {
+@include keyframes(drop){
   0% {
     -webkit-transform: translateY(-.5rem);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes drop {
-  /* line 457, ../sass/elements.scss */
-  0% {
-    -moz-transform: translateY(-.5rem);
-  }
-
-  /* line 460, ../sass/elements.scss */
-  100% {
-    -moz-transform: translateY(0);
-  }
-}
-
-@-o-keyframes drop {
-  /* line 465, ../sass/elements.scss */
-  0% {
-    -o-transform: translateY(-.5rem);
-  }
-
-  /* line 468, ../sass/elements.scss */
-  100% {
-    -o-transform: translateY(0);
-  }
-}
-
-@keyframes drop {
-  0% {
-    transform: translateY(-.5rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
