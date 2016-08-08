@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    
+    var browser_anim_end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+            browser_anim_start = 'webkitAnimationStart mozAnimationStart MSAnimationStart oanimationstart animationstart'
     $('#post-index .hentry,.archives .collection').each(function(i){
         $(this).css({
             'animation-duration':'1s',
@@ -12,13 +13,8 @@ $(document).ready(function(){
         $('.archives').css({'border-left-width':'.04rem'});
     })
 
-    $('.dl-menuwrapper,.hentry,.tags .entry-meta,.archives .collection').on('webkitAnimationEnd',function(){
+    /*$('.dl-menuwrapper,.hentry,.tags .entry-meta,.archives .collection').on(browser_anim_end,function(){
         $(this).css('opacity','1');
-    })
-    /*$('').on('webkitAnimationEnd',function(){
-        $(this).css({
-            //'padding-top':'60px',
-            'opacity':'1',
-        });
     })*/
+
 })

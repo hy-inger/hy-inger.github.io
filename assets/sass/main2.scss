@@ -2,19 +2,20 @@
 @import "compass/css3";
 @import "compass/utilities/";
 
+
 *{
     box-sizing:border-box;
 }
 .clearfix{
     @include clearfix;
-}
+} 
 html {
-  line-height: 1;
+  line-height: 1; 
   height: 100%;
   font-size: 625%;
   font-family: "Lato", Calibri, Arial, sans-serif;
 }
-@media only screen and (min-width: 320px) and (max-width: 568px) {
+@media only screen and (min-width: 320px) and (max-width: 568px) { 
   html{
     font-size: 350%;
   }
@@ -109,8 +110,9 @@ a:hover, a:active {
     padding-top: .6rem;
     padding-bottom: .2rem;
     background: #fff;
-    z-index: 1000;
+    z-index: 1000; 
     @include animation(MenuAnimIn 0.6s linear);
+    @include animation-fill-mode(forwards);
     .logo{
         text-align: center;
         margin:0 auto;
@@ -187,7 +189,7 @@ a:hover, a:active {
       -webkit-border-radius: .03rem;
       -moz-border-radius: .03rem;
       border-radius: .03rem;
-      padding: .5rem .8rem;
+      padding: .3rem .8rem .5rem .8rem;
     }
 }
 .entry,
@@ -212,6 +214,7 @@ a:hover, a:active {
     margin-bottom: .3rem;
     opacity: 0;
     @include animation(drop 1s ease 0.5s);
+    @include animation-fill-mode(forwards);
     .entry-meta{
         color: #bbbbbb;
         margin:.15rem 0;
@@ -366,6 +369,7 @@ a:hover, a:active {
         margin-bottom: .55rem;
         opacity: 0;
         @include animation(drop 1s ease .5s);
+        @include animation-fill-mode(forwards);
     }
     .collection-item{
         font-size: .16rem;
@@ -405,6 +409,7 @@ a:hover, a:active {
   .entry-meta{
     opacity: 0;
     @include animation(drop 1s ease);
+    @include animation-fill-mode(forwards);
     li{
       display: inline-block;
       padding:.05rem .23rem .05rem .2rem;
