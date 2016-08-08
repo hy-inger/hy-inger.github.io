@@ -477,21 +477,22 @@ a:hover, a:active {
 /* line 344, ../sass/main2.scss */
 .archives {
   padding: .2rem;
+  margin: 0 .5rem;
   border-left-style: solid;
   border-left-color: #eee;
 }
-/* line 348, ../sass/main2.scss */
+/* line 349, ../sass/main2.scss */
 .archives.hentry {
   box-shadow: none;
   border: 0;
 }
-/* line 352, ../sass/main2.scss */
+/* line 353, ../sass/main2.scss */
 .archives blockquote {
   font-size: .23rem;
   margin-bottom: .3rem;
   position: relative;
 }
-/* line 356, ../sass/main2.scss */
+/* line 357, ../sass/main2.scss */
 .archives blockquote:before {
   content: " ";
   position: absolute;
@@ -505,7 +506,7 @@ a:hover, a:active {
   top: 50%;
   margin-top: -.06rem;
 }
-/* line 368, ../sass/main2.scss */
+/* line 369, ../sass/main2.scss */
 .archives .collection {
   margin-bottom: .55rem;
   opacity: 0;
@@ -516,7 +517,7 @@ a:hover, a:active {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 374, ../sass/main2.scss */
+/* line 375, ../sass/main2.scss */
 .archives .collection-item {
   font-size: .16rem;
   margin-top: .3rem;
@@ -525,7 +526,7 @@ a:hover, a:active {
   border-bottom: .01rem dotted #ddd;
   position: relative;
 }
-/* line 381, ../sass/main2.scss */
+/* line 382, ../sass/main2.scss */
 .archives .collection-item:before {
   content: " ";
   position: absolute;
@@ -541,21 +542,21 @@ a:hover, a:active {
   top: 50%;
   margin-top: -.08rem;
 }
-/* line 394, ../sass/main2.scss */
+/* line 395, ../sass/main2.scss */
 .archives .collection-item:hover {
   border-color: #888181;
 }
-/* line 397, ../sass/main2.scss */
+/* line 398, ../sass/main2.scss */
 .archives .collection-item a {
   color: #888181;
 }
-/* line 399, ../sass/main2.scss */
+/* line 400, ../sass/main2.scss */
 .archives .collection-item a:hover {
   text-decoration: none;
 }
 
 /* tags */
-/* line 409, ../sass/main2.scss */
+/* line 410, ../sass/main2.scss */
 .tags .entry-meta {
   opacity: 0;
   -moz-animation: drop 1s ease;
@@ -565,7 +566,7 @@ a:hover, a:active {
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-/* line 413, ../sass/main2.scss */
+/* line 414, ../sass/main2.scss */
 .tags .entry-meta li {
   display: inline-block;
   padding: .05rem .23rem .05rem .2rem;
@@ -577,14 +578,14 @@ a:hover, a:active {
   border-radius: 0.03rem;
   font-size: .18rem;
 }
-/* line 421, ../sass/main2.scss */
+/* line 422, ../sass/main2.scss */
 .tags .entry-meta li span {
   position: absolute;
   top: 0;
   right: .15rem;
   font-size: .14rem;
 }
-/* line 428, ../sass/main2.scss */
+/* line 429, ../sass/main2.scss */
 .tags .entry-meta li:before {
   content: " ";
   position: absolute;
@@ -594,7 +595,7 @@ a:hover, a:active {
   left: 0;
   top: 0;
 }
-/* line 438, ../sass/main2.scss */
+/* line 439, ../sass/main2.scss */
 .tags .entry-meta li:after {
   content: " ";
   position: absolute;
@@ -608,12 +609,12 @@ a:hover, a:active {
   top: 50%;
   margin-top: -.025rem;
 }
-/* line 451, ../sass/main2.scss */
+/* line 452, ../sass/main2.scss */
 .tags .hentry {
   position: relative;
   padding: 0.2rem 0 0.3rem 0 !important;
 }
-/* line 455, ../sass/main2.scss */
+/* line 456, ../sass/main2.scss */
 .tags .target {
   padding-top: 2.5rem;
   margin-top: -2.5rem;
@@ -621,12 +622,12 @@ a:hover, a:active {
   position: relative;
   z-index: -1;
 }
-/* line 462, ../sass/main2.scss */
+/* line 463, ../sass/main2.scss */
 .tags .tag-title {
   position: relative;
   display: inline-block;
 }
-/* line 465, ../sass/main2.scss */
+/* line 466, ../sass/main2.scss */
 .tags .tag-title .h2 {
   font-size: .2rem;
   color: #fff;
@@ -640,7 +641,7 @@ a:hover, a:active {
   z-index: 2;
   position: relative;
 }
-/* line 478, ../sass/main2.scss */
+/* line 479, ../sass/main2.scss */
 .tags .tag-title .em {
   position: absolute;
   width: .26rem;
@@ -652,7 +653,7 @@ a:hover, a:active {
   top: .08rem;
   z-index: 0;
 }
-/* line 488, ../sass/main2.scss */
+/* line 489, ../sass/main2.scss */
 .tags .tag-title .em:before {
   content: " ";
   border-color: transparent #fff transparent transparent;
@@ -665,7 +666,7 @@ a:hover, a:active {
   right: 0;
   box-sizing: border-box;
 }
-/* line 500, ../sass/main2.scss */
+/* line 501, ../sass/main2.scss */
 .tags .tag-title .em:after {
   content: " ";
   position: absolute;
@@ -675,11 +676,11 @@ a:hover, a:active {
   left: 0;
   bottom: 0;
 }
-/* line 512, ../sass/main2.scss */
+/* line 513, ../sass/main2.scss */
 .tags .ul {
   margin: .3rem;
 }
-/* line 514, ../sass/main2.scss */
+/* line 515, ../sass/main2.scss */
 .tags .ul .entry-title {
   padding: 0.1rem 0;
 }
