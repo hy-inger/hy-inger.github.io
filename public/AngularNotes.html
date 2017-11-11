@@ -1,0 +1,158 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Angular 开发笔记</title>
+
+<meta name="description" content="Alphs template for Jekyll">
+<meta name="keywords" content="Angular">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 开发笔记">
+<meta property="og:description" content="Alphs template for Jekyll">
+<meta property="og:url" content="/AngularNotes">
+<meta property="og:site_name" content="">
+
+<link rel="canonical" href="">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main2.css">
+<link rel="stylesheet" href="/assets/css/rouge.css">
+<!-- Webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<div class="logo"><img class="img" src="/assets/img/logo.png"></div>
+	<ul class="ul">
+		<li><a href="/"><i class="fa fa-home"></i><br/>Home</a></li>
+		<li><a href="/archive/"><i class="fa fa-pencil-square"></i><br/>Archives</a></li>
+		<li><a href="/tags/"><i class="fa fa-tags"></i><br/>Tags</a></li>
+		<!-- <li><a href="/categories/"><i class="fa fa-folder-open"></i><br/>Categories</a></li> -->
+		<li>
+		      <a href="/aboutme"><i class="fa fa-tachometer"></i><br/>About Me</a>
+		</li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/AngularNotes" rel="bookmark" title="Angular 开发笔记">Angular 开发笔记</a></h1>
+        
+        <h2>August 05, 2016</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>从零开始使用angular碰到很多问题，断断续续记录了一些问题。现在放到这里来。</p>
+<ul>
+    <li>
+        1、ng-if or ng-show.
+       ng-if和ng-show的区别就不详说了。简单点说就是ng-if会销毁dom，ng-show/ng-hide只是使用display：none将dom隐藏。
+       1）、需要频繁显示隐藏切换的元素使用ng-show；
+            不需要的使用ng-if，比如根据角色权限不同显示不同的模块或数据。
+       2）、不是在首次加载渲染的使用ng-if。
+       3）、使用双向数据绑定比较多的使用ng-if。
+       总的来说用ng-if比较多，毕竟ng-if为false时不会创建元素，不会绑定数据，也就不会触发$digest,减少watch过程。
+
+    </li>
+</ul>
+      <footer class="entry-meta">
+        <!-- <span class="entry-tags">
+          <a href="/tags/#Angular" title="Pages tagged Angular" class="tag">Angular</a>
+          
+        </span> -->
+        <span>
+          <a href="/AngularNotes" rel="bookmark" title="Angular 开发笔记">Angular 开发笔记</a> was published on 
+          <span class="entry-date date published updated">
+            <time datetime="2016-08-05T00:00:00+08:00">August 05, 2016</time>
+          </span>
+        </span>
+        
+        <span class="author vcard">
+            <span class="fn"><a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a></span>
+        </span>
+        
+      </footer>
+	  
+    </div><!-- /.entry-content -->
+    
+    
+    <div class="read-more clearfix">
+      <div class="read-more-list">
+        
+      </div><!-- /.read-more-list -->
+      
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <div class="copy">&copy; 2017 Ying Huang (Inger) </div>
+<div>Powered by 
+    <a href="http://jekyllrb.com">Jekyll</a>  using the 
+    <a href="http://mademistakes.com/">HPSTR Theme</a> and 
+    <a href="http://jinlaixu.net/">Seeksky</a> modify by Inger.
+</div>
+
+	
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+
+
+<a style="position:fixed;bottom:5px;right:5px;font-size:4em;" href="#" title="Back to Top">
+           <i class="icon-circle-arrow-up"></i>
+</a> 
+	        
+<script src="/assets/js/plugins/toc-aside.js"></script>
+</body>
+</html>
