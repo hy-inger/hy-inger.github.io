@@ -8,7 +8,7 @@ paginate: 5
 gems: [jekyll-paginate]
 
 
-highlighter: rouge
+highlighter: pygments
 
 excerpt_separator: "\n"
 
@@ -16,3 +16,9 @@ permalink: /:title
 
 owner:
   name:           Ying Huang (Inger)
+
+
+markdown: redcarpet
+
+redcarpet:
+    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "prettify","no_intra_emphasis"]

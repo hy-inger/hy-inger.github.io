@@ -30,7 +30,7 @@
 <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 <link rel="stylesheet" href="/assets/css/main2.css">
-<link rel="stylesheet" href="/assets/css/rouge.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
 <!-- Webfonts -->
 <!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
 
@@ -79,8 +79,8 @@
   <header>
     <div class="entry-meta">
         <span class="entry-date date published updated">
-            <time datetime="2016-08-05T00:00:00+08:00">
-               August 05, 2016
+            <time datetime="2017-06-05T00:00:00+08:00">
+               June 05, 2017
             </time>
         </span>
         <span class="author vcard">
@@ -91,12 +91,36 @@
         
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="/AngularNotes" rel="bookmark" title="Angular 开发笔记" itemprop="url" class="title">Angular 开发笔记</a></h1>
+      <h1 class="entry-title"><a href="/DataTransfer" rel="bookmark" title="$watch、$observe、$on在主control和directive之间进行数据通信的使用和区别" itemprop="url" class="title">$watch、$observe、$on在主control和directive之间进行数据通信的使用和区别</a></h1>
     
   </header>
   <div class="entry-content">
-    <p>从零开始使用angular碰到很多问题，断断续续记录了一些问题。现在放到这里来。</p>
+    <p>$watch、$observe用于自动监听模型变化，实时反映到View中；$on是一个接收广播事件方法，用于不同控制器之间的消息传递，实际上也就是不同控制器之间的数据更新传递，$broadcast和$emit用于发送广播事件。</p>
 
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    <div class="entry-meta">
+        <span class="entry-date date published updated">
+            <time datetime="2017-05-25T00:00:00+08:00">
+               May 25, 2017
+            </time>
+        </span>
+        <span class="author vcard">
+            <span class="fn">
+                <a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a>
+            </span>
+        </span>
+        
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/ChromeNetworkTiming" rel="bookmark" title="Chrome Network Resource Timing详解" itemprop="url" class="title">Chrome Network Resource Timing详解</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>在网页加载过慢的情况下，可以使用Chrome浏览器的调试工具，Network timeline查看资源加载时间，了解是否为资源加载过程问题。</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -121,8 +145,7 @@
     
   </header>
   <div class="entry-content">
-    <p>一个DOM元素绑定两个事件，一个冒泡，一个捕获，则事件会执行多少次，执行顺序如何。</p><p>这导致了我对冒泡和捕获又进一步深入的了解。(永远都在发现自己知识匮乏的日子中度过人生真是好抓急啊。)</p>
-
+    <p>一个DOM元素绑定两个事件，一个冒泡，一个捕获，则事件会执行多少次，执行顺序如何。</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

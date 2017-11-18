@@ -1,0 +1,213 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Chrome Network Resource Timing详解</title>
+
+<meta name="description" content="Alphs template for Jekyll">
+<meta name="keywords" content="debug">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome Network Resource Timing详解">
+<meta property="og:description" content="Alphs template for Jekyll">
+<meta property="og:url" content="/ChromeNetworkTiming">
+<meta property="og:site_name" content="">
+
+<link rel="canonical" href="">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main2.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
+<!-- Webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<div class="logo"><img class="img" src="/assets/img/logo.png"></div>
+	<ul class="ul">
+		<li><a href="/"><i class="fa fa-home"></i><br/>Home</a></li>
+		<li><a href="/archive/"><i class="fa fa-pencil-square"></i><br/>Archives</a></li>
+		<li><a href="/tags/"><i class="fa fa-tags"></i><br/>Tags</a></li>
+		<!-- <li><a href="/categories/"><i class="fa fa-folder-open"></i><br/>Categories</a></li> -->
+		<li>
+		      <a href="/aboutme"><i class="fa fa-tachometer"></i><br/>About Me</a>
+		</li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/ChromeNetworkTiming" rel="bookmark" title="Chrome Network Resource Timing详解">Chrome Network Resource Timing详解</a></h1>
+        
+        <h2>May 25, 2017</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>在网页加载过慢的情况下，可以使用Chrome浏览器的调试工具，Network timeline查看资源加载时间，了解是否为资源加载过程问题。<br>
+下面详细的对timeline各指标进行解析，包括可能出现问题及应该注意方向。<br>
+<img src="https://cloud.githubusercontent.com/assets/10647005/26441821/a540e032-4164-11e7-81ed-02fed9245dc2.png" alt="image2017-3-27 14 17 50"></p>
+
+<h2 id="1-queueing">1、Queueing</h2>
+
+<p>排队时间。在http1下浏览器对每次TCP连接的数量有所限制。比如Chrome浏览器是限制同一域名下支持同时6个TCP连接。如果请求的资源超过6个并资源优先级比较低，便会进入队列进行排队等待其他连接释放。</p>
+
+<p>Queueing就是这个等待时间。</p>
+
+<p>合理使用多域名，增加并发连接数量。</p>
+
+<p>http2支持多路复用，即没有TCP连接数量限制。</p>
+
+<h2 id="2-stalled">2、Stalled</h2>
+
+<p>请求允许被发出到请求真正发出的时间间隔。<br>
+  也就是浏览器收到一个指令，指令说你可以准备发出请求了，于是浏览器就准备代理协商，如果有已经建好的链接，还会等待可建立的TCP连接被重新复用的时间（不包括DNS查询、TCP建立连接等时间）。等这些做完了，请求也就可以发出了。</p>
+
+<p>Stalled就是收到这个指令到请求可以发出的时间间隔。<br>
+  已建立的TCP连接确认是否可被继续使用需要一个检测过程，这个检测过程的时间会包含在stalled中。<br>
+  如果这个检测返回错误，客户端会连续发送可复用tcp连接继续进行检测，如果持续检测超过最大次数仍然没有连接检测成功、查找到可复用的tcp连接。客户端便认为没有可复用的连接，检测结束。记录时间。（在这之后会发送一个新的TCP请求连接，已不属于stalled时间间隔）</p>
+
+<p>如果出现stalled阶段过长，可能是丢包所致，说明网络不太好或服务端有问题。<br>
+  参考：<a href="http://fex.baidu.com/blog/2015/01/chrome-stalled-problem-resolving-process/">http://fex.baidu.com/blog/2015/01/chrome-stalled-problem-resolving-process/</a></p>
+
+<h2 id="3-proxy-negotiation">3、Proxy Negotiation</h2>
+
+<p>#与代理服务器连接协商所用的时间。（需要使用代理服务器进行访问的url才会有这个时间）</p>
+
+<h2 id="4-dns-lookup">4、DNS Lookup</h2>
+
+<p>DNS查询所用时间。当访问一个新域时需要进行DNS解析，这个时间可能会有点长。<br>
+  如果在hosts设置了DNS、或者浏览器已经缓存了DNS，这个时间就为0，忽略不计了。</p>
+
+<h2 id="5-initial-connection-connecting">5、Initial Connection / Connecting</h2>
+
+<p>建立连接所用时间。包括TCP握手和多次尝试握手、处理SSL的时间。<br>
+  TCP建立连接，可能由于网络原因或服务器原因导致丢包，一次握手不成功，于是会出现多次尝试握手情况。<br>
+  如果在stalled阶段成功检测到可复用TCP连接，这个时间同样也会为0，忽略不计。</p>
+
+<h2 id="6-ssl">6、SSL</h2>
+
+<p>完成SSL握手所用时间。</p>
+
+<h2 id="7-request-sent-sending">7、Request Sent / Sending</h2>
+
+<p>请求发出时间。将http请求报文第一个字节发出开始到最后一个字节发出结束的时间。通常非常小。<br>
+  如果请求报文比较大，这个时间可能会长一点，不过影响不大。</p>
+
+<h2 id="8-waiting-ttfb">8、Waiting (TTFB)</h2>
+
+<p>等待服务端初始响应的时间。也就是从请求发出开始，服务端接收到请求，返回数据，客户端接收到第一个字节的这一段时间。<br>
+  这个时间段代表服务器处理和返回数据网络延时时间。如果时间过长，说明可能客户端与服务端之间网络较差或服务器响应较慢。<br>
+  服务器优化的目的就是要让这个时间段尽可能短。</p>
+
+<h2 id="9-content-download-downloading">9、Content Download / Downloading</h2>
+
+<p>接收响应数据时间。也就是客户端接收到服务端返回的第一个字节开始，到接收到最后一个字节结束的这一段时间。<br>
+  一般来说时间也比较小，如果返回体比较大，这个时间也可能会长一点。</p>
+
+<p>参考：<a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing">https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing</a></p>
+
+      <footer class="entry-meta">
+        <!-- <span class="entry-tags">
+          <a href="/tags/#debug" title="Pages tagged debug" class="tag">debug</a>
+          
+        </span> -->
+        <span>
+          <a href="/ChromeNetworkTiming" rel="bookmark" title="Chrome Network Resource Timing详解">Chrome Network Resource Timing详解</a> was published on 
+          <span class="entry-date date published updated">
+            <time datetime="2017-05-25T00:00:00+08:00">May 25, 2017</time>
+          </span>
+        </span>
+        
+        <span class="author vcard">
+            <span class="fn"><a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a></span>
+        </span>
+        
+      </footer>
+	  
+    </div><!-- /.entry-content -->
+    
+    
+    <div class="read-more clearfix">
+      <div class="read-more-list">
+        
+          <div class="list-item">
+            <h4><a href="/JavaScriptEvent" title="W3C下的冒泡和捕获机制">W3C下的冒泡和捕获机制</a></h4>
+            <span>Published on April 15, 2014</span>
+          </div><!-- /.list-item -->
+        
+      </div><!-- /.read-more-list -->
+      
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <div class="copy">&copy; 2017 Ying Huang (Inger) </div>
+<div>Powered by 
+    <a href="http://jekyllrb.com">Jekyll</a>  using the 
+    <a href="http://mademistakes.com/">HPSTR Theme</a> and 
+    <a href="http://jinlaixu.net/">Seeksky</a> modify by Inger.
+</div>
+
+	
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+
+
+<a style="position:fixed;bottom:5px;right:5px;font-size:4em;" href="#" title="Back to Top">
+           <i class="icon-circle-arrow-up"></i>
+</a> 
+	        
+<script src="/assets/js/plugins/toc-aside.js"></script>
+</body>
+</html>
