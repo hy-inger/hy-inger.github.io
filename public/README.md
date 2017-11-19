@@ -2,3 +2,5 @@
 
 
 jekyll server watch
+
+jekyll build --destination public
