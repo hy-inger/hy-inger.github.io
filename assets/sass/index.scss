@@ -51,7 +51,7 @@ section.item1{
     background: #ddd;
 }
 section.item2{
-    background: #eadccf;
+    background: #dbe3f3;
 }
 section.item3{ 
     background: #DBF3DB;
@@ -66,20 +66,20 @@ section.active{
     display: block;
 }
 section.prev-scale-down{
-    -webkit-animation: scaleDown 1s ease;
+    -webkit-animation: scaleDown 0.8s ease;
     opacity: 0;
 
 }
 section.next-slide-up{
-    -webkit-animation: slideUp 1s ease;
+    -webkit-animation: slideUp 0.8s ease;
     opacity: 1;
 }
 section.next-scale-up{
-    -webkit-animation: scaleUp 1s ease;
+    -webkit-animation: scaleUp 0.8s ease;
     opacity: 0;
 }
 section.prev-slide-down{
-    -webkit-animation: slideDown 1s ease;
+    -webkit-animation: slideDown 0.8s ease;
     opacity: 1;
 }
 @-webkit-keyframes scaleDown{
@@ -254,7 +254,7 @@ section.prev-slide-down{
 }
 @for $i from 1 to 10 {
     $size:random()*12;
-    $opacity:random();
+    $opacity:random() - 0.2;
     $delay:random()*5+5; 
     $width:.1rem; 
     .tech .tag#{$i}{ 

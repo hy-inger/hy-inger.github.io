@@ -129,7 +129,7 @@ section.item1 {
 
 /* line 53, ../sass/index.scss */
 section.item2 {
-  background: #eadccf;
+  background: #dbe3f3;
 }
 
 /* line 56, ../sass/index.scss */
@@ -154,25 +154,25 @@ section.active {
 
 /* line 68, ../sass/index.scss */
 section.prev-scale-down {
-  -webkit-animation: scaleDown 1s ease;
+  -webkit-animation: scaleDown 0.8s ease;
   opacity: 0;
 }
 
 /* line 73, ../sass/index.scss */
 section.next-slide-up {
-  -webkit-animation: slideUp 1s ease;
+  -webkit-animation: slideUp 0.8s ease;
   opacity: 1;
 }
 
 /* line 77, ../sass/index.scss */
 section.next-scale-up {
-  -webkit-animation: scaleUp 1s ease;
+  -webkit-animation: scaleUp 0.8s ease;
   opacity: 0;
 }
 
 /* line 81, ../sass/index.scss */
 section.prev-slide-down {
-  -webkit-animation: slideDown 1s ease;
+  -webkit-animation: slideDown 0.8s ease;
   opacity: 1;
 }
 
@@ -361,236 +361,236 @@ section.prev-slide-down {
 
 /* line 260, ../sass/index.scss */
 .tech .tag1 {
-  opacity: 0.481;
-  padding: 0.0481rem 0.1443rem;
-  font-size: 0.13392rem;
-  color: #0e3a60;
-  animation: 9.17615s fade 0.3s ease infinite;
+  opacity: -0.08347;
+  padding: -0.00835rem -0.02504rem;
+  font-size: 0.31999rem;
+  color: black;
+  animation: 9.6354s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.481;
+    opacity: -0.08347;
   }
   30% {
-    opacity: 0.781;
+    opacity: 0.21653;
   }
   50% {
-    opacity: 1.081;
+    opacity: 0.51653;
   }
   70% {
-    opacity: 0.781;
+    opacity: 0.21653;
   }
   100% {
-    opacity: 0.481;
+    opacity: -0.08347;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag2 {
-  opacity: 0.68584;
-  padding: 0.06858rem 0.20575rem;
-  font-size: 0.83224rem;
-  color: #155289;
-  animation: 8.65623s fade 0.3s ease infinite;
+  opacity: 0.12267;
+  padding: 0.01227rem 0.0368rem;
+  font-size: 0.42837rem;
+  color: #040f19;
+  animation: 5.75829s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.68584;
+    opacity: 0.12267;
   }
   30% {
-    opacity: 0.98584;
+    opacity: 0.42267;
   }
   50% {
-    opacity: 1.28584;
+    opacity: 0.72267;
   }
   70% {
-    opacity: 0.98584;
+    opacity: 0.42267;
   }
   100% {
-    opacity: 0.68584;
+    opacity: 0.12267;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag3 {
-  opacity: 0.88724;
-  padding: 0.08872rem 0.26617rem;
-  font-size: 0.39892rem;
-  color: #1b6ab1;
-  animation: 9.8698s fade 0.3s ease infinite;
+  opacity: -0.02612;
+  padding: -0.00261rem -0.00783rem;
+  font-size: 0.24219rem;
+  color: black;
+  animation: 6.35931s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.88724;
+    opacity: -0.02612;
   }
   30% {
-    opacity: 1.18724;
+    opacity: 0.27388;
   }
   50% {
-    opacity: 1.48724;
+    opacity: 0.57388;
   }
   70% {
-    opacity: 1.18724;
+    opacity: 0.27388;
   }
   100% {
-    opacity: 0.88724;
+    opacity: -0.02612;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag4 {
-  opacity: 0.59626;
-  padding: 0.05963rem 0.17888rem;
-  font-size: 1.01152rem;
-  color: #124877;
-  animation: 5.26842s fade 0.3s ease infinite;
+  opacity: 0.40178;
+  padding: 0.04018rem 0.12053rem;
+  font-size: 0.46197rem;
+  color: #0c3050;
+  animation: 9.29787s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.59626;
+    opacity: 0.40178;
   }
   30% {
-    opacity: 0.89626;
+    opacity: 0.70178;
   }
   50% {
-    opacity: 1.19626;
+    opacity: 1.00178;
   }
   70% {
-    opacity: 0.89626;
+    opacity: 0.70178;
   }
   100% {
-    opacity: 0.59626;
+    opacity: 0.40178;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag5 {
-  opacity: 0.08258;
-  padding: 0.00826rem 0.02478rem;
-  font-size: 0.91162rem;
-  color: #020a11;
-  animation: 6.86175s fade 0.3s ease infinite;
+  opacity: 0.41687;
+  padding: 0.04169rem 0.12506rem;
+  font-size: 1.19758rem;
+  color: #0d3253;
+  animation: 8.13422s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.08258;
+    opacity: 0.41687;
   }
   30% {
-    opacity: 0.38258;
+    opacity: 0.71687;
   }
   50% {
-    opacity: 0.68258;
+    opacity: 1.01687;
   }
   70% {
-    opacity: 0.38258;
+    opacity: 0.71687;
   }
   100% {
-    opacity: 0.08258;
+    opacity: 0.41687;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag6 {
-  opacity: 0.4122;
-  padding: 0.04122rem 0.12366rem;
-  font-size: 0.54903rem;
-  color: #0c3152;
-  animation: 5.22769s fade 0.3s ease infinite;
+  opacity: 0.13892;
+  padding: 0.01389rem 0.04168rem;
+  font-size: 0.45196rem;
+  color: #04111c;
+  animation: 9.89575s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.4122;
+    opacity: 0.13892;
   }
   30% {
-    opacity: 0.7122;
+    opacity: 0.43892;
   }
   50% {
-    opacity: 1.0122;
+    opacity: 0.73892;
   }
   70% {
-    opacity: 0.7122;
+    opacity: 0.43892;
   }
   100% {
-    opacity: 0.4122;
+    opacity: 0.13892;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag7 {
-  opacity: 0.45145;
-  padding: 0.04514rem 0.13543rem;
-  font-size: 0.44308rem;
-  color: #0e365a;
-  animation: 5.16547s fade 0.3s ease infinite;
+  opacity: -0.13327;
+  padding: -0.01333rem -0.03998rem;
+  font-size: 0.39101rem;
+  color: black;
+  animation: 9.37637s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.45145;
+    opacity: -0.13327;
   }
   30% {
-    opacity: 0.75145;
+    opacity: 0.16673;
   }
   50% {
-    opacity: 1.05145;
+    opacity: 0.46673;
   }
   70% {
-    opacity: 0.75145;
+    opacity: 0.16673;
   }
   100% {
-    opacity: 0.45145;
+    opacity: -0.13327;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag8 {
-  opacity: 0.57932;
-  padding: 0.05793rem 0.1738rem;
-  font-size: 1.06169rem;
-  color: #114674;
-  animation: 8.92057s fade 0.3s ease infinite;
+  opacity: -0.1561;
+  padding: -0.01561rem -0.04683rem;
+  font-size: 0.66339rem;
+  color: black;
+  animation: 5.08748s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.57932;
+    opacity: -0.1561;
   }
   30% {
-    opacity: 0.87932;
+    opacity: 0.1439;
   }
   50% {
-    opacity: 1.17932;
+    opacity: 0.4439;
   }
   70% {
-    opacity: 0.87932;
+    opacity: 0.1439;
   }
   100% {
-    opacity: 0.57932;
+    opacity: -0.1561;
   }
 }
 /* line 260, ../sass/index.scss */
 .tech .tag9 {
-  opacity: 0.04662;
-  padding: 0.00466rem 0.01399rem;
-  font-size: 0.86383rem;
-  color: #010609;
-  animation: 9.4s fade 0.3s ease infinite;
+  opacity: 0.55855;
+  padding: 0.05586rem 0.16757rem;
+  font-size: 0.9807rem;
+  color: #114370;
+  animation: 5.64659s fade 0.3s ease infinite;
 }
 
 @keyframes fade {
   0% {
-    opacity: 0.04662;
+    opacity: 0.55855;
   }
   30% {
-    opacity: 0.34662;
+    opacity: 0.85855;
   }
   50% {
-    opacity: 0.64662;
+    opacity: 1.15855;
   }
   70% {
-    opacity: 0.34662;
+    opacity: 0.85855;
   }
   100% {
-    opacity: 0.04662;
+    opacity: 0.55855;
   }
 }
 /* line 285, ../sass/index.scss */
