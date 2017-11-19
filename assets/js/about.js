@@ -3,7 +3,10 @@ window.onload = function(){
     var now = 1,
         next = 1,
         action = false, // 页面滚动过程不可操作滚动
-        roll = false;
+        scroll = false, // 是否已经触发滚动事件
+        roll = false,
+        start_scroll = 0,   // 开始滚动时间
+        end_scroll = 0;     // 当前滚动时间     
     var section = document.querySelectorAll('.item'),
             num = section.length;
     var animation = function(next,prev,next_action,prev_action){
@@ -41,8 +44,13 @@ window.onload = function(){
                     slideDown(i);
                     function slideDown(i){
                         var timer = setTimeout(function(){
-                            module.slideDown(content[i],1000);
+                            module.slideDown(content[i],800,function(){
+                                if(content[i].offsetHeight <= 0){
+                                    content[i].style.height = 300 + "px";
+                                }
+                            });
                             clearTimeout(timer);
+                            
                         },i*800);
                     }
                     
@@ -60,11 +68,19 @@ window.onload = function(){
              
     }
     /* 鼠标滚轮事件切换页面 */
+
     module.addEvent(document,'mousewheel,DOMMouseScroll',function(e){
+        e.stopPropagation();
+        end_scroll = Date.now();
+        if(end_scroll - start_scroll < 1500){       // 两次滚动时间间隔小于1.5s，不执行滚动事件。
+            return;
+        }
         if(action){
             return;
         }
+        start_scroll = Date.now();
         action = true;
+
         e.delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
         if(e.delta<0){              // 滚轮向下,当前页面缩小向下隐藏,
             next = now+1;
@@ -91,8 +107,7 @@ window.onload = function(){
     module.addEvent(ul,'click',function(e){
         if(action){
             var timer = setTimeout(function(){
-                action = false;
-                console.log(action);
+                action = false;ß
                 clearTimeout(timer);
             },30000);
             return;
@@ -101,7 +116,7 @@ window.onload = function(){
         var target = e.target?e.target:e.srcElement;
         if(module.hasClass(target,'step')){
             e.stopPropagation();
-            next = target.getAttribute('data');
+            next = parseInt(target.getAttribute('data'));
             prev = now;
             if(now == next){
                 action = false;
