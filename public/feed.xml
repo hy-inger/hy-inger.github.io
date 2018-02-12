@@ -4,13 +4,73 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2017-11-19T14:38:53+08:00</updated>
+<updated>2018-02-12T11:13:42+08:00</updated>
 <id>/</id>
 <author>
   <name>Ying Huang (Inger)</name>
   <uri>/</uri>
   <email></email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[浏览器渲染机制]]></title>
+ <link rel="alternate" type="text/html" href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6" />
+  <id>/浏览器渲染机制</id>
+  <published>2018-02-12T00:00:00+08:00</published>
+  <updated>2018-02-12T00:00:00+08:00</updated>
+  <author>
+    <name>Ying Huang (Inger)</name>
+    <uri></uri>
+    <email></email>
+  </author>
+  <content type="html">&lt;h3 id=&quot;html&quot;&gt;一、加载到HTML文件后渲染引擎渲染流程？&lt;/h3&gt;
+
+&lt;p&gt;1、浏览器下载HTML文件并开始解析DOM，构建dom树。&lt;/p&gt;
+
+&lt;p&gt;2、遇到link[rel=stylesheet]的时候，将其加入资源下载队列，构建Style Rules。继续解析dom（css没有阻塞dom解析）。此时DOM树依旧在构建中，也就是CSS规则树和DOM树的构建是同时进行的。&lt;/p&gt;
+
+&lt;p&gt;3、DOM树和CSS规则树关联，构建render tree。此时如果css规则树未构建完毕而DOM树已经构建完毕，则需要等待其完成再执行关联构建render tree。&lt;/p&gt;
+
+&lt;p&gt;4、Layout 根据Render Tree计算每个节点的信息。&lt;/p&gt;
+
+&lt;p&gt;5、Painting 根据计算好的信息绘制页面。&lt;/p&gt;
+
+&lt;h3 id=&quot;javascript&quot;&gt;二、javascript在什么时候执行？&lt;/h3&gt;
+
+&lt;p&gt;在解析构建DOM树的过程中，遇见script标签有三种情况&lt;/p&gt;
+
+&lt;p&gt;1、css文件没有下载解析完成，阻塞DOM，并行下载js，等待解析。css文件解析完成后，执行js代码。（此时css阻塞了js，进而阻塞了dom。）&lt;/p&gt;
+
+&lt;p&gt;2、css 解析完成。下载js文件并执行。（js 阻塞dom解析）&lt;/p&gt;
+
+&lt;p&gt;3、script加上defer,async两个属性，资源下载则不会阻塞dom的解析。这两个属性的不同点在于：&lt;br&gt;
+- 资源下载完成后，async会立即执行代码，此时会阻塞dom的解析；&lt;br&gt;
+- 而defer会在dom解析完后执行代码，该过程也属于dom解析过程，也就是js代码执行完成后dom树才算是真正的构建完成，触发DOMContentLoaded事件。&lt;br&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/10647005/36082337-7ad8d040-0fe3-11e8-9893-4df645a56a3a.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;part-6409f5c9bf9a45cd&quot;&gt;三、图片资源在什么时候加载？&lt;/h3&gt;
+
+&lt;p&gt;1、img标签图片：解析html的过程中，遇到img标签则加载图片。被设置了不可见的元素也会加载，只是不会渲染。图片异步加载， 不阻塞dom的解析。&lt;/p&gt;
+
+&lt;p&gt;2、background-img 背景图片&lt;/p&gt;
+
+&lt;p&gt;（1）dom树和css规则树匹配时，加载dom元素所对应css规则中的背景图片。&lt;/p&gt;
+
+&lt;p&gt;（2）如果dom元素设置了不可见，背景图片也会加载。（遍历元素，会加载背景图片，但不会产出到render树）&lt;/p&gt;
+
+&lt;p&gt;（3）如果dom元素的父元素设置了不可见，背景图片不会加载。（遍历父元素为不可见，则不会遍历子元素，不会加载背景图片）。&lt;/p&gt;
+
+&lt;p&gt;（4）伪类样式上的背景图片在触发伪类的时候才进行加载。&lt;/p&gt;
+
+&lt;p&gt;（5）css规则树中存在而dom不存在的元素的背景图片不加载。&lt;/p&gt;
+
+&lt;h3 id=&quot;window-onload&quot;&gt;四、所有资源加载完毕会触发window.onload事件。&lt;/h3&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn&quot;&gt;https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6&quot;&gt;浏览器渲染机制&lt;/a&gt; was originally published by Ying Huang (Inger) at &lt;a href=&quot;&quot;&gt;&lt;/a&gt; on February 12, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
