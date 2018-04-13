@@ -1,0 +1,226 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks</title>
+
+<meta name="description" content="Alphs template for Jekyll">
+<meta name="keywords" content="Brower">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks">
+<meta property="og:description" content="Alphs template for Jekyll">
+<meta property="og:url" content="/Chrome+SwitchyOmega+Shadowsocks">
+<meta property="og:site_name" content="">
+
+<link rel="canonical" href="">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main2.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
+<!-- Webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<div class="logo"><img class="img" src="/assets/img/logo.png"></div>
+	<ul class="ul">
+		<li><a href="/"><i class="fa fa-home"></i><br/>Home</a></li>
+		<li><a href="/archive/"><i class="fa fa-pencil-square"></i><br/>Archives</a></li>
+		<li><a href="/tags/"><i class="fa fa-tags"></i><br/>Tags</a></li>
+		<!-- <li><a href="/categories/"><i class="fa fa-folder-open"></i><br/>Categories</a></li> -->
+		<li>
+		      <a href="/aboutme"><i class="fa fa-tachometer"></i><br/>About Me</a>
+		</li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/Chrome+SwitchyOmega+Shadowsocks" rel="bookmark" title="科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks">科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks</a></h1>
+        
+        <h2>April 06, 2018</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>有些朋友问我怎么配置科学上网的时候，在网上找一些教程扔给他们也常配不对。感觉主要还是代理和端口不知道怎么配，所以记录一下详细的配置过程吧。<br>
+主要工具是Chrome浏览器+SwitchyOmega插件+Shadowsocks。</p>
+
+<h3 id="shadowsocks">一 、Shadowsocks的安装与配置</h3>
+
+<p>1、下载Shadowsocks。各系统客户端<a href="https://shadowsocks.org/en/download/clients.html">下载地址</a>，<a href="https://github.com/shadowsocks/shadowsocks-iOS/releases">mac客户端下载地址</a>。</p>
+
+<p>2、下载完成后开始配置。如图所示，首先进行服务器设置，【打开服务器设定】。<br>
+     如果有二维码，可以直接选择【从屏幕扫描二维码】。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38432530-517ad13a-39fa-11e8-8df7-1e8776ea17e7.png" alt="qq20180407-3"></p>
+
+<p>3、按照图示配置shadowsocks 的服务器 IP、服务器端口、加密方式、密码、代理端口。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38432650-c768f124-39fa-11e8-9159-0b317bc79b58.jpeg" alt="qq20180407-4"></p>
+
+<p>4、PAC使用本地PAC，点击【从GFWList更新PAC】。</p>
+
+<p>5、其他配置不用修改。然后打开shadowsocks（如果有的话），点击【全局模式】。</p>
+
+<p>然后就可以打开chrome浏览器，访问<a href="https://www.google.com/">https://www.google.com/</a>  。如果访问成功，说明配置正常。</p>
+
+<h3 id="part-72da410f2517b4b5">二、接下来，配置浏览器自动代理</h3>
+
+<p>1、保持shadowsocks全局翻墙模式，访问 Chrome 应用商店安装<a href="https://chrome.google.com/webstore/search/SwitchyOmega?hl=zh-CN">SwitchyOmega</a>。</p>
+
+<p>2、打开【选项】进行配置。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38431142-e1abc494-39f5-11e8-8946-eddf7fe3ff88.png" alt="image"></p>
+
+<p>3、点击【新建情景模式】，按照图示填写选择。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38432721-09755e2c-39fb-11e8-8fcf-c63f97cf22d1.jpeg" alt="qq20180407-3"></p>
+
+<p>4、创建后按照图示选择代理协议，填写代理服务器和代理端口。保存。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38432800-447c1056-39fb-11e8-9150-374b441f1630.jpg" alt="qq20180407-0"><br>
+<img src="https://user-images.githubusercontent.com/10647005/38432835-5b0163d0-39fb-11e8-8a81-ba44943d1312.PNG" alt="img_8659"></p>
+
+<p>5、此时，将shadowsocks改为【自动代理模式】，将SwitchyOmega设置为【自动切换】。<br>
+然后访问某个被墙的网址，将网址按照图示加入自动切换列表，以后再访问该网址就会自动使用代理访问。<br>
+如果有某个网址访问不了，手动加入自动切换列表是最好的方式。<br>
+<img src="https://user-images.githubusercontent.com/10647005/38431353-8cf6bba6-39f6-11e8-9f65-cf0940820407.png" alt="image"><br>
+<img src="https://user-images.githubusercontent.com/10647005/38432852-6bcd95d0-39fb-11e8-8592-a9844c61839e.PNG" alt="img_8660"></p>
+
+<p>6、因为开启全局模式会影响其他不需要梯子的网站访问速度，所以一般开启自动代理模式。</p>
+
+<h3 id="shadowsocks">三、命令行配置shadowsocks（跟图形客户端配置类似，可略过。）</h3>
+
+<p>1、使用python安装shadowsocks</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>apt-get install python-pip
+pip install shadowsocks
+</code></pre></div>
+<p>2、创建客户端配置文件（即类似图形客户端的配置）</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span> vi /etc/shadowsocks/config.json
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>      {
+        ／／服务器ip或域名均可，若需同时指定多个服务端ip，使用如下例的语法&quot;server&quot;:[&quot;1.1.1.1&quot;,&quot;2.2.2.2&quot;]
+        &quot;server&quot;:&quot;hk.kingss.me&quot;,  
+        &quot;server_port&quot;:13330,               ／／ 服务器端口
+        &quot;local_address&quot;:&quot;127.0.0.1&quot;,      ／／本地监听地址
+        &quot;local_port&quot;:1082,                    ／／本地代理端口，即上面所配置的1082
+        &quot;password&quot;:&quot;123456&quot;,                 ／／ 密码
+        &quot;timeout&quot;:600,
+        &quot;method&quot;:&quot;aes-256-cfb&quot;,               ／／代理协议
+        &quot;fast_open&quot;:false,
+        &quot;workers&quot;:1
+     }
+</code></pre></div>
+<p>具体参数说明可见<a href="https://wiki.archlinux.org/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">官方文档</a></p>
+
+<p>3、启动代理。在终端执行如下命令。（配合nohup和&amp;可以使之后台运行，关闭终端也不影响）</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>nohup sslocal -c /etc/shadowsocks/config.json &amp;
+</code></pre></div>
+<p>4、不创建配置文件，手动执行方式如下。（主要命令比较长，容易出错。如果config.json加载失败，可以尝试一下这种方式。）</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>nohup sslocal -s 服务器地址 -p 服务器端口 -l 本地端端口 -k 密码 -m 加密方法 &amp;
+</code></pre></div>
+      <footer class="entry-meta">
+        <!-- <span class="entry-tags">
+          <a href="/tags/#Brower" title="Pages tagged Brower" class="tag">Brower</a>
+          
+        </span> -->
+        <span>
+          <a href="/Chrome+SwitchyOmega+Shadowsocks" rel="bookmark" title="科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks">科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks</a> was published on 
+          <span class="entry-date date published updated">
+            <time datetime="2018-04-06T00:00:00+08:00">April 06, 2018</time>
+          </span>
+        </span>
+        
+        <span class="author vcard">
+            <span class="fn"><a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a></span>
+        </span>
+        
+      </footer>
+	  
+    </div><!-- /.entry-content -->
+    
+    
+    <div class="read-more clearfix">
+      <div class="read-more-list">
+        
+          <div class="list-item">
+            <h4><a href="/DataTransfer" title="$watch、$observe、$on在主control和directive之间进行数据通信的使用和区别">$watch、$observe、$on在主control和directive之间进行数据通信的使用和区别</a></h4>
+            <span>Published on June 05, 2017</span>
+          </div><!-- /.list-item -->
+        
+          <div class="list-item">
+            <h4><a href="/ChromeNetworkTiming" title="Chrome Network Resource Timing详解">Chrome Network Resource Timing详解</a></h4>
+            <span>Published on May 25, 2017</span>
+          </div><!-- /.list-item -->
+        
+      </div><!-- /.read-more-list -->
+      
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <div class="copy">&copy; 2018 Ying Huang (Inger) </div>
+<div>Powered by 
+    <a href="http://jekyllrb.com">Jekyll</a>  using the 
+    <a href="http://mademistakes.com/">HPSTR Theme</a> and 
+    <a href="http://jinlaixu.net/">Seeksky</a> modify by Inger.
+</div>
+
+	
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+
+
+<a style="position:fixed;bottom:5px;right:5px;font-size:4em;" href="#" title="Back to Top">
+           <i class="icon-circle-arrow-up"></i>
+</a> 
+	        
+<script src="/assets/js/plugins/toc-aside.js"></script>
+</body>
+</html>
