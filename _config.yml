@@ -22,5 +22,3 @@ markdown: redcarpet
 
 redcarpet:
     extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "prettify","no_intra_emphasis"]
-
-theme: jekyll-theme-minimal

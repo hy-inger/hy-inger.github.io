@@ -1,0 +1,418 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>与前端相关的Nginx配置</title>
+
+<meta name="description" content="Alphs template for Jekyll">
+<meta name="keywords" content="Nginx">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="与前端相关的Nginx配置">
+<meta property="og:description" content="Alphs template for Jekyll">
+<meta property="og:url" content="/Nginx-Frontend">
+<meta property="og:site_name" content="">
+
+<link rel="canonical" href="">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
+<!-- Webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<div class="logo"><img class="img" src="/assets/img/logo.png"></div>
+	<ul class="ul">
+		<li><a href="/"><i class="fa fa-home"></i><br/>Home</a></li>
+		<li><a href="/archive/"><i class="fa fa-pencil-square"></i><br/>Archives</a></li>
+		<li><a href="/tags/"><i class="fa fa-tags"></i><br/>Tags</a></li>
+		<!-- <li><a href="/categories/"><i class="fa fa-folder-open"></i><br/>Categories</a></li> -->
+		<li>
+		      <a href="/aboutme"><i class="fa fa-tachometer"></i><br/>About Me</a>
+		</li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/Nginx-Frontend" rel="bookmark" title="与前端相关的Nginx配置">与前端相关的Nginx配置</a></h1>
+        
+        <h2>June 01, 2018</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h3 id="nginx">前端开发nginx配置</h3>
+
+<p><a href="#1-%E5%BC%80%E5%90%AF%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6mime%E5%93%8D%E5%BA%94%E5%A4%B4">1. 开启压缩和自定义特殊文件MIME响应头</a></p>
+
+<p><a href="#2-nginx-%E7%BC%93%E5%AD%98%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E">2. nginx 缓存配置说明</a></p>
+
+<p><a href="#3-ssl%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E7%94%A8hstshttp-strict-transport-securityhttp%E4%B8%A5%E6%A0%BC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8">3. SSL配置和启用HSTS(HTTP Strict Transport Security，HTTP严格传输安全)</a></p>
+
+<p><a href="#4-csp%E7%AD%96%E7%95%A5">4. CSP策略</a></p>
+
+<blockquote>
+<p>nginx 配置一般由后端开发人员配置，因此以下内容作为学习了解。与前端有关的配置总结如下，根据实际项目进行修改，再告知后端人员进行配置即可。</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>    server{
+        # 压缩配置
+        gzip on;                            # 开启http gzip 压缩输出
+        gzip_min_length 1k;        # 不压缩临界值。默认，一般不改
+        gzip_buffers 4 16k;          # 设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。默认，一般不改
+        gzip_comp_level 6 ;         # 压缩级别(级别越高,压的越小,越浪费CPU计算资源)。推荐6
+        gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png; # 进行压缩的文件类型
+        gzip_http_version 1.0|1.1;          # 进行压缩的http协议版本。默认1.1
+        gzip_vary on|off;                        # 是否传输gzip压缩标志
+
+        include /etc/nginx/mime.types;                    #加入nginx默认的文件MIME响应头
+        types {                                                             #自定义文件响应头
+            image/webp webp;                                    #定义webp图片格式响应头
+            text/mainfest mainfest;                             #定义mainfest文件响应头
+        }
+
+        # 缓存配置, example
+        etag on;
+        location ~\.(gif|jpg|png)$ {
+            expires 10d;　#设置图片缓存时间
+            add_header Cache-Control max-age=60
+        }
+
+        # HSTS
+        add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains;preload&quot; always;
+
+
+        # CSP 策略
+        Content-Security-Policy: default-src &#39;self&#39; *.trusted.com; img-src https://example.com/; frame-src https: ; style-src: &#39;unsafe-inline&#39;; connect-src: https://*.example.xx.com; 
+
+        # 配置block-all-mixed-content规则，所有非https的资源都不允许加载。
+        Content-Security-Policy: block-all-mixed-content; 
+
+        # 或
+
+        # 配置upgrade-insecure-requests, 浏览器会帮忙做HTTP--&gt;HTTPS的转换。
+        Content-Security-Policy: upgrade-insecure-requests
+
+
+    }
+</code></pre></div>
+<h4 id="1-mime">1. 开启压缩和自定义特殊文件MIME响应头</h4>
+
+<p>nginx中很多配置既可写在http,亦可写在server和location上下文中,<br>
+具体可查看<a href="http://nginx.org/en/docs/http/ngx_http_core_module.html">官方文档</a></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>http {
+    gzip on;                            # 开启http gzip 压缩输出
+    gzip_min_length 1k;        # 不压缩临界值。默认，一般不改
+    gzip_buffers 4 16k;          # 设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。默认，一般不改
+    gzip_comp_level 6 ;         # 压缩级别(级别越高,压的越小,越浪费CPU计算资源)。推荐6
+    gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png; # 进行压缩的文件类型
+    gzip_http_version 1.0|1.1;          # 进行压缩的http协议版本。默认1.1
+    gzip_vary on|off;                        # 是否传输gzip压缩标志
+
+    include /etc/nginx/mime.types;                    #加入nginx默认的文件MIME响应头
+    types {                                                             #自定义文件响应头
+        image/webp webp;                                    #定义webp图片格式响应头
+        text/mainfest mainfest;                             #定义mainfest文件响应头
+    }
+}
+</code></pre></div>
+<p><strong><a href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91nginx%E9%85%8D%E7%BD%AE">⬆ back to top</a></strong></p>
+
+<h4 id="2-nginx">2. nginx 缓存配置说明</h4>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>server {
+    etag on; #开启etag缓存
+
+    #缓存响应的修改时间小于或等于“If-Modified-Since”请求头字段中的时间。
+    #if_modified_since　before;
+
+    server {
+        listen 80;
+
+        location ~\.(gif|jpg|png)$ {
+            expires 10d;　#设置图片缓存时间
+            add_header Cache-Control max-age=60
+        }
+    }
+}
+</code></pre></div>
+<ul>
+<li><code class="prettyprint">expires</code> 绝对缓存时间, 以分钟为单位，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。</li>
+<li><code class="prettyprint">Cache-Control</code> 相对缓存时间，max-age表示以秒为单位的缓存时间。<code class="prettyprint">(会覆盖expires设置)</code>Cache-Control其他常见值及含义如下
+
+<ul>
+<li><code class="prettyprint">private</code>(默认): 只能在浏览器中缓存, 只有在第一次请求的时候才访问服务器, 若有max-age, 则缓存期间不访问服务器.</li>
+<li><code class="prettyprint">public</code>: 可以被任何缓存区缓存, 如: 浏览器、服务器、代理服务器等.</li>
+<li><code class="prettyprint">no-cache</code>: 每次使用缓存前需要将请求提交给原始服务器进行验证，若缓存未过期（返回304）则使用本地缓存。</li>
+<li><code class="prettyprint">no-store</code>: 所有数据内容不会被缓存，每次请求都重新访问服务器。</li>
+<li><code class="prettyprint">no-transform</code>: 不得对资源进行转换或转变。Content-Encoding, Content-Range, Content-Type等HTTP头不能由代理修改.</li>
+<li><code class="prettyprint">must-revalidate</code>: 缓存过期前（max-age），可以使用缓存；缓存过期后每次请求都必须访问源服务器（区别于缓存服务器）进行验证.</li>
+<li><code class="prettyprint">max-stale</code>:  以秒为单位，表示客户端支持接收一个过期不超过指定秒数的资源.</li>
+</ul></li>
+<li><code class="prettyprint">If-Modified-Since/Last-Modified</code> 
+
+<ul>
+<li><code class="prettyprint">Last-Modified</code>：服务器在响应请求时，告诉浏览器资源的最后修改时间。</li>
+<li><code class="prettyprint">If-Modified-Since</code>: 浏览器再次请求服务器时，通过发送If-Modified-Since 头，带上上一次请求获得的修改时间（在Last-Modified头里）发送到服务器，服务器会判断这个时间之后文件有没有改变，如果没有改变返回状态值304，如果有返回新文件，状态值200．可选值有 <code class="prettyprint">off</code>, <code class="prettyprint">exact</code> 和 <code class="prettyprint">before</code> .
+
+<ul>
+<li><code class="prettyprint">off</code> If-Modified-Since”请求头字段被忽略</li>
+<li><code class="prettyprint">exact</code> 完全匹配</li>
+<li><code class="prettyprint">before</code> 响应的修改时间小于或等于“If-Modified-Since”请求头字段中的时间。</li>
+</ul></li>
+</ul></li>
+<li><code class="prettyprint">etag</code> 实体内容的hash字符串(md5或者SHA1的算法计算出来的)，这个方法更准确但是更消耗服务器的CPU。<code class="prettyprint">(优先级高于Last-Modified / If-Modified-Since)</code>
+
+<ul>
+<li>浏览器第一次请求资源时，服务器会返回Etag值</li>
+<li>浏览器再次请求资源时，通过发送If-None-Match 头，带上Etag值，服务器会进行比较，如果一样就返回304，不一样则发送最新文件，返回值200。可选值有　<code class="prettyprint">on</code> 和　<code class="prettyprint">off</code>, 分别表示开启和关闭.</li>
+</ul></li>
+</ul>
+
+<p><strong><a href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91nginx%E9%85%8D%E7%BD%AE">⬆ back to top</a></strong></p>
+
+<h4 id="3-ssl-hsts-http-strict-transport-security-http">3. SSL配置和启用HSTS(HTTP Strict Transport Security，HTTP严格传输安全)</h4>
+
+<p>启用HSTS首先要启用SSL,使用SSL需要先生成证书。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>server {
+    ssl on;                                                             # 开启ssl配置
+    ssl_certificate /etc/nginx/ssl/server.crt;        # 证书公钥
+    ssl_certificate_key /etc/nginx/ssl/server.key;      #证书私钥
+
+    # ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;     # 加密协议，默认
+    # ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; # 加密套件，默认
+    ssl_prefer_server_ciphers on;                         # 设置协商加密算法时，优先使用我们服务端的加密套件，而不是客户端浏览器的加密套件。
+}
+</code></pre></div>
+<p>HSTS允许一个 HTTPS 网站要求浏览器总是通过 HTTPS 来访问，这使得攻击者在用戶与服务器通讯过程中拦截、篡改信息以及冒充身份变得更为困难。只要在 Nginx 配置文件加上以下头信息就可以了：<br>
+<code class="prettyprint"><br>
+server {<br>
+    add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains;preload&quot; always;<br>
+}<br>
+</code><br>
+- max-age：设置单位时间内強制使用 HTTPS 连接<br>
+- includeSubDomains：可选，所有子域同时生效<br>
+- preload：可选，非规范值，用于定义使用『HSTS 预加载列表』<br>
+- always：可选，保证所有响应都发送此响应头，包括各种內置错误响应</p>
+
+<p>一个简单https服务例子</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+
+    # 通过使用永久重定向到HTTPS网站的主页来阻止深层链接
+    return 301 https://$host;
+
+    # 或者将所有HTTP链接重定向到匹配的HTTPS页面
+    # return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.example.com;
+
+    ssl on;                                                             # 开启ssl配置
+    ssl_certificate /etc/nginx/ssl/server.crt;        # 证书公钥
+    ssl_certificate_key /etc/nginx/ssl/server.key;      #证书私钥
+
+    # ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;     # 加密协议，默认
+    # ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; # 加密套件，默认
+    ssl_prefer_server_ciphers on;                         # 设置协商加密算法时，优先使用我们服务端的加密套件，而不是客户端浏览器的加密套件。
+
+    add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+    add_header X-Frame-Options &quot;DENY&quot;;                          # 避免点击劫持，确保被不会嵌入到frame 或 iframe
+}
+</code></pre></div>
+<p><strong><a href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91nginx%E9%85%8D%E7%BD%AE">⬆ back to top</a></strong></p>
+
+<h4 id="4-csp">4. CSP策略</h4>
+
+<p>CSP (Content Security Policy, 全称: 内容安全策略)是一种以可信白名单作机制，来限制网站中是否可以包含某来源的资源。有助于检测并缓解某些类型的攻击，包括跨站脚本（XSS）和数据注入攻击。优先采用最先定义的策略。</p>
+
+<p>1、 在配置文件中添加<code class="prettyprint">Content-Security-Policy</code>, 并配置相应的值，便可以控制用户代理可以为该页面获取哪些资源。 </p>
+
+<p>一个简单的CSP例子</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>server {
+    Content-Security-Policy: default-src &#39;self&#39; *.trusted.com; img-src https://example.com/; frame-src https: ; style-src: &#39;unsafe-inline&#39;; connect-src: https://*.example.xx.com
+}
+</code></pre></div>
+<p>说明：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>// 默认规则，当相关资源未定义规则时，就使用默认规则。
+// self , 表示只可请求来自同一源的内容（不包括其子域名）
+// *.trusted.com , 表示可请求该域名和子域名下的内容
+default-src &#39;self&#39; *.trusted.com  
+
+
+
+
+// 其他特殊规则, 相关资源使用定义规则（覆盖默认规则）
+// img-src https://example.com/ , 表示允许图片从https://example.com/加载（不包括其子域名）
+// frame-src https: , 表示frame允许所有https链接
+// style-src &#39;unsafe-inline&#39;, 表示允许内联脚本
+// connect-src: https://*.example.xx.com , 包括 XMLHttpRequest、WebSocket 等链接,允许从https://*.example.xx.com和其子域加载
+img-src https://example.com/
+frame-src https: 
+style-src: &#39;unsafe-inline&#39;; 
+connect-src: https://*.example.xx.com
+</code></pre></div>
+<p>其中frame-src规则在CSP2中被废弃，在CPS3又被恢复。其他规则指令查看<a href="https://www.w3.org/TR/CSP/">CSP官方文档</a></p>
+
+<p>2、CSP默认不支持内联样式和内联脚本。支持内联样式和内联脚本需要启用规则<code class="prettyprint">unsafe-inline</code>, 或使用<code class="prettyprint">Nonces</code>和<code class="prettyprint">Hashes</code>规则</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Content-Security-Policy: script-src unsafe-inline unsafe-eval; style-src unsafe-inline
+</code></pre></div>
+<p>(1)<code class="prettyprint">Nonces</code> 是通过在 CSP 中指定允许资源的序号，达到限制非法 inline 代码的目的。只有与 CSP 策略中序号一致的代码可以执行。实际使用中为了确保安全，nonce 的值都会经过 base64 编码。</p>
+
+<p>一个简单的例子</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>// 配置文件
+Content-Security-Policy: script-src &#39;nonce-1&#39;
+
+// html文件
+&lt;script nonce=&quot;1&quot;&gt;alert(0);&lt;/script&gt;
+</code></pre></div>
+<p>(2)<code class="prettyprint">Hashes</code> 是通过在 CSP 中指定允许资源的摘要签名，达到限制非法 inline 代码的目的。支持 sha256、sha384 和 sha512 三种算法。计算hash值时，标签不算在内。</p>
+
+<p>一个简单的例子</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>// 配置文件
+Content-Security-Policy: script-src &#39;sha256-d3ii1Pel57UO62xosCMNgTaZJhJa87Gd/X6e7UdlEU8=&#39;
+
+// html文件
+&lt;script&gt;alert(0);&lt;/script&gt;
+</code></pre></div>
+<p>3、避免加载混合内容引起的问题</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>混合内容：HTTPS网页中加载的HTTP资源
+</code></pre></div>
+<p>(1) 配置<code class="prettyprint">block-all-mixed-content</code>规则，所有非https的资源都不允许加载。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Content-Security-Policy: block-all-mixed-content
+</code></pre></div>
+<p>(2) 配置<code class="prettyprint">upgrade-insecure-requests</code>, 浏览器会帮忙做HTTP--&gt;HTTPS的转换。</p>
+
+<ul>
+<li>页面所有 HTTP 资源，会被替换为 HTTPS 地址再发起请求；</li>
+<li><p>页面所有站内链接，点击后会被替换为 HTTPS 地址再跳转；</p>
+
+<p>Content-Security-Policy: upgrade-insecure-requests  // 只替换协议部分，所以只适用于 HTTP/HTTPS 域名和路径完全一致的场景</p></li>
+</ul>
+
+<blockquote>
+<p>upgrade-insecure-requests 指令会在 block-all-mixed-content 之前执行；如果前者执行成功，后者就不再发挥任何作用。推荐的做法是设置二者之一，而不是全部。</p>
+</blockquote>
+
+<p><strong><a href="#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91nginx%E9%85%8D%E7%BD%AE">⬆ back to top</a></strong></p>
+
+<p>参考:</p>
+
+<p><a href="http://nginx.org/en/docs/beginners_guide.html">官方教程</a></p>
+
+<p><a href="https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/">官方HSTS文档</a></p>
+
+      <footer class="entry-meta">
+        <!-- <span class="entry-tags">
+          <a href="/tags/#Nginx" title="Pages tagged Nginx" class="tag">Nginx</a>
+          
+        </span> -->
+        <span>
+          <a href="/Nginx-Frontend" rel="bookmark" title="与前端相关的Nginx配置">与前端相关的Nginx配置</a> was published on 
+          <span class="entry-date date published updated">
+            <time datetime="2018-06-01T00:00:00+08:00">June 01, 2018</time>
+          </span>
+        </span>
+        
+        <span class="author vcard">
+            <span class="fn"><a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a></span>
+        </span>
+        
+      </footer>
+	  
+    </div><!-- /.entry-content -->
+    
+    
+    <div class="read-more clearfix">
+      <div class="read-more-list">
+        
+          <div class="list-item">
+            <h4><a href="/ChromeSwitchyOmegaShadowsocks" title="科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks">科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks</a></h4>
+            <span>Published on April 06, 2018</span>
+          </div><!-- /.list-item -->
+        
+          <div class="list-item">
+            <h4><a href="/BrowerRender" title="浏览器渲染机制">浏览器渲染机制</a></h4>
+            <span>Published on February 12, 2018</span>
+          </div><!-- /.list-item -->
+        
+      </div><!-- /.read-more-list -->
+      
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <div class="copy">&copy; 2019 Ying Huang (Inger) </div>
+<div>Powered by 
+    <a href="http://jekyllrb.com">Jekyll</a>  using the 
+    <a href="http://mademistakes.com/">HPSTR Theme</a> and 
+    <a href="http://jinlaixu.net/">Seeksky</a> modify by Inger.
+</div>
+
+	
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+
+
+<a style="position:fixed;bottom:5px;right:5px;font-size:4em;" href="#" title="Back to Top">
+           <i class="icon-circle-arrow-up"></i>
+</a> 
+	        
+<script src="/assets/js/plugins/toc-aside.js"></script>
+</body>
+</html>

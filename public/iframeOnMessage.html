@@ -1,0 +1,231 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>接入iframe通信的一些问题</title>
+
+<meta name="description" content="Alphs template for Jekyll">
+<meta name="keywords" content="html">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接入iframe通信的一些问题">
+<meta property="og:description" content="Alphs template for Jekyll">
+<meta property="og:url" content="/iframeOnMessage">
+<meta property="og:site_name" content="">
+
+<link rel="canonical" href="">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title=" Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/pygments.css">
+<!-- Webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post" >
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<div class="logo"><img class="img" src="/assets/img/logo.png"></div>
+	<ul class="ul">
+		<li><a href="/"><i class="fa fa-home"></i><br/>Home</a></li>
+		<li><a href="/archive/"><i class="fa fa-pencil-square"></i><br/>Archives</a></li>
+		<li><a href="/tags/"><i class="fa fa-tags"></i><br/>Tags</a></li>
+		<!-- <li><a href="/categories/"><i class="fa fa-folder-open"></i><br/>Categories</a></li> -->
+		<li>
+		      <a href="/aboutme"><i class="fa fa-tachometer"></i><br/>About Me</a>
+		</li>
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/iframeOnMessage" rel="bookmark" title="接入iframe通信的一些问题">接入iframe通信的一些问题</a></h1>
+        
+        <h2>February 25, 2019</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <h4 id="1">1. 加载顺序问题</h4>
+
+<p>访问iframe，获取数据需要使用父页面的token。父页面通过异步请求获取权限token，由于加载顺序无法保证，可能导致iframe中获取的token为undefined。</p>
+
+<p>解决办法：</p>
+
+<p>a. 当父页面成功获取token后，再对iframe的src进行赋值，加载iframe页面。</p>
+
+<ul>
+<li>优点：
+
+<ul>
+<li>保证加载顺序，确保iframe能够获取token，兼容性高。</li>
+<li>不会阻塞父页面的加载。</li>
+</ul></li>
+<li>缺点：
+
+<ul>
+<li>无法与父页面并行加载。（利弊共存）</li>
+<li>加载iframe时，页面处于忙碌状态。</li>
+</ul></li>
+</ul>
+
+<p>b. 仍设置iframe的src。父页面获取token成功后，通过postMessage/onMessage进行通信。</p>
+
+<ul>
+<li>除了获取token，优缺点与上面a相反。</li>
+</ul>
+
+<p>其他：message为HTML5的新api，在IE下支持度不高，而在其他浏览器支持度还是良好的。</p>
+
+<ul>
+<li>可能存在的加载顺利问题
+
+<ul>
+<li>getToken与iframe加载</li>
+<li>获取contentWindow与iframe加载</li>
+<li>动态加载iframe页面和iframe.onload的绑定</li>
+</ul></li>
+</ul>
+
+<h4 id="2-message-api-iframe">2.使用message api实现iframe与父页面之间的跨域通信。</h4>
+
+<p>a. 为了避免安全问题，postMessage应该始终设置第二个参数，指定接受消息的窗口。</p>
+
+<p>b. onMessage 应该始终使用origin和source属性验证发送方身份。</p>
+
+<p>c. 调用postMessage的元素为iframe的窗口元素，iframe.contentWindow；而iframe的Dom元素未加载完成之前，contentWindow为null。</p>
+
+<p>因此需要先为iframe绑定onload事件，在该事件中执行postMessage。iframe文档加载完成即调用onload。 </p>
+
+<h4 id="3">3. 缓存问题</h4>
+
+<p>浏览器可能会对iframe的内容进行缓存，虽然设置了etag协商缓存但并没有生效，index.html加载为旧文件。由于服务器内容已更新，无法加载旧的静态资源（文件名使用md5戳防止缓存，因此文件已被替换更新）</p>
+
+<p>解决办法：对入口文件index.html设置绝对不缓存<code class="prettyprint">cache-control: no-store</code>，其他静态资源设置协商缓存<code class="prettyprint">Etag</code></p>
+
+<h4 id="part-2bb9a3071a3c407a">后端问题</h4>
+
+<p>某一次django升级后，<code class="prettyprint">set-cookie</code>一直失效。排查到最后发现是<code class="prettyprint">SameSite</code>属性被设置了默认值<code class="prettyprint">strict</code>导致cookie无法跨站点设置。</p>
+
+<p><em>参考阅读</em></p>
+
+<p>SameSite<br>
+限制第三方站点发送cookie</p>
+
+<p>当一个请求本身的 URL 和它的发起页面的 URL 不属于同一个站点时，这个请求就算第三方请求。那么怎样算是同一个站点？是我们经常说的同源（same-origin）吗，cross-origin 的两个请求就不属于同一个站点？显然不是的，foo.a.com 和 bar.a.com 是不同源的，但很有可能是同一个站点的，a.com 和 a.com:8000 是不同源的，但它俩绝对是属于同一个站点的，浏览器在判断第三方请求时用的判断逻辑并不是同源策略，而是用了 Public Suffix List 来判断。</p>
+
+<p>有些同学可能会这么想：一个域名可以用逗号分成多个字段，如果两个域名的最后两个字段都是相同的，那它们就是同一个站点的，比如 foo.a.com 和 bar.a.com 就是。但是 sina.com.cn 和 sohu.com.cn 也满足这个条件啊，它们绝对不是同一个网站吧，那是不是说浏览器需要维护一份列表来记录所有国家颁布的二级域名啊，但是不仅国家可以开放三级域名给不同的网站使用，普通的网站也可能会，比如新浪就开放 *.sinaapp.com 三级域名注册，foo.sinaapp.com 和 bar.sinaapp.com 是两个不同的网站，那 sinaapp.com 也应该加入那个列表中，以及 github.io 等等。</p>
+
+<p>Mozilla 很久之前就将自己维护的这个域名后缀列表放到了 github 上，起名为 Public Suffix List，里面不仅有 IANA 颁布的顶级域名，众多二级域名，还有三级域名比如 compute.amazonaws.com，甚至四级域名比如 compute.amazonaws.com.cn，判断两个 URL 是不是同一个网站的，只要判断两个 URL 的域名的 public suffix（按能匹配到的最长的算）以及它前面的那个字段（后面用 public suffix+1 指代）是否都相同，是的话就是同一个站点的，否则不是。比如 <a href="http://www.sina.com.cn">www.sina.com.cn</a> 的 public suffix+1 是 sina.com.cn，www.sohu.com.cn 的 public suffix+1 是 sohu.com.cn， 两者不一样，所以不属于同一个站点；再比如 nanzhuang.taobao.com 的 public suffix+1 是 taobao.com，nvzhuang.taobao.com 的 public suffix+1 也是 taobao.com，那么它俩就是同一个站点的。</p>
+
+<p>Public Suffix List 最初被 Firefox 用在限制 Set-Cookie 响应头的 Domain 属性上的， Domain 不能设置成一个比自己网站的 public suffix+1 还高层级的域名，比如 foo.w3c.github.io 就不能设置 Set-Cookie: foo=1; Domain=github.io，最高只能设置成 Set-Cookie: bar=1; Domain=w3c.github.io，现在其它浏览器也都在用同样的列表做同样的限制。DOM API 里的 document.domain 后来也加上了这个限制。有些浏览器还用这个列表来高亮地址栏上的 URL 中的 public suffix+1 部分（Firefox 和 IE 有用，Chrome 是高亮了整个域名），此外浏览器们还用该列表干一些其它琐事，比如将历史网址按不同站点排列等等。</p>
+
+<p>浏览器们会定期同步这份列表，比如 Chrome 是在每个正式版本发布之前同步一次。</p>
+
+      <footer class="entry-meta">
+        <!-- <span class="entry-tags">
+          <a href="/tags/#html" title="Pages tagged html" class="tag">html</a>
+          
+        </span> -->
+        <span>
+          <a href="/iframeOnMessage" rel="bookmark" title="接入iframe通信的一些问题">接入iframe通信的一些问题</a> was published on 
+          <span class="entry-date date published updated">
+            <time datetime="2019-02-25T00:00:00+08:00">February 25, 2019</time>
+          </span>
+        </span>
+        
+        <span class="author vcard">
+            <span class="fn"><a href="/about/" title="About Ying Huang (Inger)">Ying Huang (Inger)</a></span>
+        </span>
+        
+      </footer>
+	  
+    </div><!-- /.entry-content -->
+    
+    
+    <div class="read-more clearfix">
+      <div class="read-more-list">
+        
+          <div class="list-item">
+            <h4><a href="/ChromeSwitchyOmegaShadowsocks" title="科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks">科学上网配置详解 Chrome+SwitchyOmega+Shadowsocks</a></h4>
+            <span>Published on April 06, 2018</span>
+          </div><!-- /.list-item -->
+        
+          <div class="list-item">
+            <h4><a href="/BrowerRender" title="浏览器渲染机制">浏览器渲染机制</a></h4>
+            <span>Published on February 12, 2018</span>
+          </div><!-- /.list-item -->
+        
+      </div><!-- /.read-more-list -->
+      
+    </div><!-- /.read-more -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <div class="copy">&copy; 2019 Ying Huang (Inger) </div>
+<div>Powered by 
+    <a href="http://jekyllrb.com">Jekyll</a>  using the 
+    <a href="http://mademistakes.com/">HPSTR Theme</a> and 
+    <a href="http://jinlaixu.net/">Seeksky</a> modify by Inger.
+</div>
+
+	
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+<script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
+<script src="/assets/js/scripts.min.js"></script>
+<script src="/assets/js/index.js"></script>
+
+
+
+
+<a style="position:fixed;bottom:5px;right:5px;font-size:4em;" href="#" title="Back to Top">
+           <i class="icon-circle-arrow-up"></i>
+</a> 
+	        
+<script src="/assets/js/plugins/toc-aside.js"></script>
+</body>
+</html>
